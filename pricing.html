@@ -1,0 +1,1096 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkSphere - Enterprise HRMS & Asset Management</title>
+    <!-- Google Fonts for modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/pricing.css?v=5">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/global.css">
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Open menu" style="display:none;background:none;border:none;cursor:pointer;padding:0.5rem;z-index:999;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div class="nav-left">
+            <a href="index.html" class="logo">WorkSphere</a>
+            <div class="nav-links">
+                <div class="nav-item has-dropdown">
+                    <a href="products.html" class="nav-link" id="nav-products-index">Features <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                    <div class="mega-menu">
+                        <div class="mega-col">
+                            <p class="mega-eyebrow">WHAT WE OFFER</p>
+                            <a href="http://localhost:3000/" class="mega-link">
+                                <strong>Asset Auditing</strong>
+                                <span>Central inventory register and corporate lifecycle</span>
+                            </a>
+                            <a href="http://localhost:3000/" class="mega-link">
+                                <strong>Leave Management</strong>
+                                <span>Calendar-driven requests and balance logs</span>
+                            </a>
+                            <a href="http://localhost:3000/" class="mega-link">
+                                <strong>Shift & attendance tracking</strong>
+                                <span>Interactive clocking and break intervals</span>
+                            </a>
+                            <a href="http://localhost:3000/" class="mega-link">
+                                <strong>Real-Time Notifications</strong>
+                                <span>Live polling alerts and smart triggers</span>
+                            </a>
+                            <a href="http://localhost:3000/" class="mega-link">
+                                <strong>AI HR Copilot</strong>
+                                <span>Intelligent context-grounded AI companion</span>
+                            </a>
+                            <a href="products.html" class="mega-link-all">
+                                 All products
+                            </a>
+                        </div>
+                        <div class="mega-col">
+                            <p class="mega-eyebrow">TOP TOOLS & FEATURES</p>
+                            <a href="http://localhost:3000/" class="mega-simple-link">shift tracking coverage</a>
+                            <a href="http://localhost:3000/" class="mega-simple-link">Offer live polling plans</a>
+                            <a href="http://localhost:3000/" class="mega-simple-link">Hire & onboard employees</a>
+                            <a href="http://localhost:3000/" class="mega-simple-link">E-file 1099s</a>
+                            <a href="http://localhost:3000/" class="mega-simple-link">Manage global teams</a>
+                        </div>
+                        <div class="mega-col mega-card-col">
+                            <div class="mega-card">
+                                <img src="https://picsum.photos/seed/gusto10/400/200" alt="Promo">
+                                <p class="mega-card-title">New brand. Same heart.</p>
+                                <div class="mega-card-divider"></div>
+                                <a href="http://localhost:3000/" class="mega-card-link">How WorkSphere compares</a>
+                                <a href="http://localhost:3000/" class="mega-card-link">Apps & integrations</a>
+                                <a href="http://localhost:3000/" class="mega-card-link">Changing asset management providers</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+<div class="nav-item has-dropdown">
+    <a href="business-types.html" class="nav-link">Solutions <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+    <div class="mega-menu">
+        <div class="mega-col">
+            <p class="mega-eyebrow">BY SIZE</p>
+            <a href="http://localhost:3000/" class="mega-link">
+                <strong>enterprise</strong>
+                <span>Run asset management, file reports, stay compliant and so much more</span>
+            </a>
+            <a href="http://localhost:3000/" class="mega-link">
+                <strong>Medium-sized business</strong>
+                <span>Grow, expand, and add leave management without the admin</span>
+            </a>
+            <a href="http://localhost:3000/" class="mega-link">
+                <strong>Larger business</strong>
+                <span>More people, more states, more complexity - one platform</span>
+            </a>
+            <a href="http://localhost:3000/" class="mega-link">
+                <strong>One employee: Solo</strong>
+                <span>track yourself and field agents compliantly</span>
+            </a>
+            <a href="http://localhost:3000/" class="mega-link">
+                <strong>Contractor only</strong>
+                <span>Onboard and pay 1099 field agents</span>
+            </a>
+            <a href="#" class="mega-link-all">
+                 All Business solutions
+            </a>
+        </div>
+        <div class="mega-col">
+            <p class="mega-eyebrow">BY INDUSTRY</p>
+            <a href="http://localhost:3000/" class="mega-link"><strong>Technology</strong></a>
+            <a href="http://localhost:3000/" class="mega-link"><strong>Construction</strong></a>
+            <a href="http://localhost:3000/" class="mega-link"><strong>Healthcare</strong></a>
+            <a href="http://localhost:3000/" class="mega-link"><strong>Professional services</strong></a>
+            <a href="http://localhost:3000/" class="mega-link"><strong>Real estate</strong></a>
+            <a href="industries.html" class="mega-link-all">
+                 All Industries
+            </a>
+        </div>
+        <div class="mega-col mega-card-col">
+            <div class="mega-card" style="padding: 0; display: flex; flex-direction: column;">
+                <div style="background: linear-gradient(135deg, #ff7a45, #d62464); color: white; padding: 2rem; border-radius: 12px; text-align: center;">
+                    <p style="font-size: 1.1rem; margin-bottom: 0.5rem; font-family: 'Playfair Display', serif;">Meet your new</p>
+                    <h3 style="font-size: 2.2rem; font-family: 'Playfair Display', serif; margin-bottom: 0;">Cofounder</h3>
+                </div>
+                <p style="padding: 1.5rem 1.5rem 0; font-weight: 600; color: #1a7b7a; line-height: 1.4;">The AI teammate built to handle your business</p>
+                <div class="mega-card-divider" style="margin: 1.5rem; height: 1px; background: rgba(0,0,0,0.1);"></div>
+                <a href="http://localhost:3000/" class="mega-card-link" style="padding: 0 1.5rem 1rem; color: #1a1a1a; font-weight: 600; text-decoration: none;">How WorkSphere compares</a>
+                <a href="http://localhost:3000/" class="mega-card-link" style="padding: 0 1.5rem 1rem; color: #1a1a1a; font-weight: 600; text-decoration: none;">Apps & integrations</a>
+                <a href="http://localhost:3000/" class="mega-card-link" style="padding: 0 1.5rem 1.5rem; color: #1a1a1a; font-weight: 600; text-decoration: none;">Changing asset management providers</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+<div class="nav-item has-dropdown">
+    <a href="accountants.html" class="nav-link">For Admins <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+    <div class="mega-menu">
+        <div class="mega-col">
+            <p class="mega-eyebrow">GROW YOUR PRACTICE</p>
+            <a href="http://localhost:3000/" class="mega-link">
+                <strong>Become a partner</strong>
+                <span>Exclusive tools, support, and revenue share</span>
+            </a>
+            <a href="http://localhost:3000/" class="mega-link">
+                <strong>WorkSphere Pro dashboard</strong>
+                <span>Track and manage all clients in one place</span>
+            </a>
+        </div>
+        <div class="mega-col">
+            <p class="mega-eyebrow">PROFESSIONAL RESOURCES</p>
+            <a href="http://localhost:3000/" class="mega-link"><strong>admin blog</strong></a>
+            <a href="http://localhost:3000/" class="mega-link"><strong>admin resources</strong></a>
+            <a href="http://localhost:3000/" class="mega-link" style="background-color: #f4f6f5; padding: 0.75rem; border-radius: 8px; color: #1a7b7a;"><strong>Professional development</strong></a>
+        </div>
+        <div class="mega-col mega-card-col">
+            <div class="mega-card" style="padding: 0; display: flex; flex-direction: column;">
+                <img src="https://picsum.photos/seed/gusto11/400/250" alt="Accountant working" style="width: 100%; border-top-left-radius: 12px; border-top-right-radius: 12px; height: 160px; object-fit: cover;">
+                <a href="http://localhost:3000/" class="mega-card-link" style="padding: 1.5rem 1.5rem 1rem; color: #1a7b7a; font-weight: 600; text-decoration: none; font-size: 1.05rem; line-height: 1.4;">Earn more with our partner program</a>
+                <div class="mega-card-divider" style="margin: 0 1.5rem 1.5rem; height: 1px; background: rgba(0,0,0,0.1);"></div>
+                <a href="http://localhost:3000/" class="mega-card-link" style="padding: 0 1.5rem 1rem; color: #1a1a1a; font-weight: 600; text-decoration: none;">How WorkSphere compares</a>
+                <a href="http://localhost:3000/" class="mega-card-link" style="padding: 0 1.5rem 1rem; color: #1a1a1a; font-weight: 600; text-decoration: none;">Apps & integrations</a>
+                <a href="http://localhost:3000/" class="mega-card-link" style="padding: 0 1.5rem 1.5rem; color: #1a1a1a; font-weight: 600; text-decoration: none;">Changing asset management providers</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+<div class="nav-item has-dropdown">
+    <a href="resources.html" class="nav-link">Documentation <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+    <div class="mega-menu">
+        <div class="mega-col">
+            <p class="mega-eyebrow">RESEARCH &amp; SUPPORT</p>
+            <a href="http://localhost:3000/" class="mega-link">
+                <strong>Talk Shop blog</strong>
+                <span>enterprise advice &amp; answers from experts</span>
+            </a>
+            <a href="http://localhost:3000/" class="mega-link">
+                <strong>Resource center</strong>
+                <span>How-to-guides, templates and articles</span>
+            </a>
+            <a href="http://localhost:3000/" class="mega-link">
+                <strong>WorkSphere Insights</strong>
+                <span>In-depth analyses and economic data</span>
+            </a>
+            <a href="http://localhost:3000/" class="mega-link">
+                <strong>Help center</strong>
+                <span>Instant step-by-step product help</span>
+            </a>
+            <a href="http://localhost:3000/" class="mega-link" style="margin-top: 0.5rem;">
+                <strong>Contact support � Log in</strong>
+            </a>
+        </div>
+        <div class="mega-col">
+            <p class="mega-eyebrow">OUR COMPANY</p>
+            <a href="http://localhost:3000/" class="mega-link"><strong>About WorkSphere</strong></a>
+            <a href="http://localhost:3000/" class="mega-link"><strong>Company news</strong></a>
+            <a href="http://localhost:3000/" class="mega-link" style="background-color: #f4f6f5; padding: 0.75rem; border-radius: 8px; color: #1a7b7a;"><strong>Careers</strong></a>
+        </div>
+        <div class="mega-col mega-card-col">
+            <div class="mega-card" style="padding: 0; display: flex; flex-direction: column;">
+                <img src="https://picsum.photos/seed/gusto12/400/250" alt="enterprise owner" style="width: 100%; border-top-left-radius: 12px; border-top-right-radius: 12px; height: 160px; object-fit: cover;">
+                <a href="http://localhost:3000/" class="mega-card-link" style="padding: 1.5rem 1.5rem 1rem; color: #1a7b7a; font-weight: 600; text-decoration: none; font-size: 1.05rem; line-height: 1.4;">First-time asset management setup guide</a>
+                <div class="mega-card-divider" style="margin: 0 1.5rem 1.5rem; height: 1px; background: rgba(0,0,0,0.1);"></div>
+                <a href="http://localhost:3000/" class="mega-card-link" style="padding: 0 1.5rem 1rem; color: #1a1a1a; font-weight: 600; text-decoration: none;">Tools &amp; calculators</a>
+                <a href="http://localhost:3000/" class="mega-card-link" style="padding: 0 1.5rem 1rem; color: #1a1a1a; font-weight: 600; text-decoration: none;">Apps &amp; integrations</a>
+                <a href="http://localhost:3000/" class="mega-card-link" style="padding: 0 1.5rem 1.5rem; color: #1a1a1a; font-weight: 600; text-decoration: none;">Changing asset management providers</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+                <a href="pricing.html" class="nav-link">Plans</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="http://localhost:3000/" class="demo-link"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg> See demo</a>
+            <button class="btn btn-primary" onclick="window.location.href='http://localhost:3000/'">Create free account</button>
+            <a href="http://localhost:3000/" class="sign-in">Sign in</a>
+        </div>
+    </nav>
+
+    <!-- CONTENT GOES HERE -->
+    <main>
+        <!-- Pricing Hero -->
+<section class="pricing-hero mesh-background animate-on-scroll fade-up">
+    <div class="glow red-1"></div>
+    <div class="glow orange-1"></div>
+    <div class="glow pink-1"></div>
+    <div class="hero-content text-center">
+        <h1 class="hero-title">Simple, transparent pricing</h1>
+        <p class="hero-desc">Asset management, leave management, and HR all in one place. No hidden fees. Cancel anytime.</p>
+        <div class="billing-toggle-container animate-on-scroll fade-up delay-100">
+            <div class="billing-toggle-pill">
+                <button class="toggle-btn active">Pay my team</button>
+                <button class="toggle-btn">Pay myself</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Cards -->
+<section class="pricing-cards-section">
+    <div class="pricing-grid">
+        <!-- Simple Tier -->
+        <div class="pricing-card animate-on-scroll fade-up delay-100">
+            <div class="tier-header">
+                <h2>Simple</h2>
+                <p>For small businesses needing single-state asset management, reports and basic support.</p>
+            </div>
+            <div class="price-box">
+                <span class="currency">$</span>
+                <span class="amount">49</span>
+                <span class="period">/mo</span>
+            </div>
+            <p class="per-person">+ $6/mo per person</p>
+            <a href="#" class="btn btn-outline w-100">Get started</a>
+            <div class="features-list">
+                <h4 class="feature-heading">Popular features</h4>
+                <ul>
+                    <li><span class="check">✓</span> Single-state asset management</li>
+                    <li><span class="check">✓</span> Unlimited payrolls per month</li>
+                    <li><span class="check">✓</span> audit logs and payments</li>
+                    <li><span class="check">✓</span> Basic PTO policies and Next-day pay</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Plus Tier -->
+        <div class="pricing-card popular animate-on-scroll scale-up delay-200">
+            <div class="popular-badge">BEST VALUE</div>
+            <div class="tier-header">
+                <h2>Plus</h2>
+                <p>For businesses needing advanced asset management, leave management, HR and time & attendance tracking.</p>
+            </div>
+            <div class="price-box">
+                <span class="currency">$</span>
+                <span class="amount">80</span>
+                <span class="period">/mo</span>
+            </div>
+            <p class="per-person">+ $12/mo per person</p>
+            <a href="#" class="btn btn-primary w-100">Get started</a>
+            <div class="features-list">
+                <h4 class="feature-heading">Popular features</h4>
+                <ul>
+                    <li><span class="check">✓</span> Multi-state asset management</li>
+                    <li><span class="check">✓</span> Next-day pay</li>
+                    <li><span class="check">✓</span> Time Tracking</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Premium Tier -->
+        <div class="pricing-card animate-on-scroll fade-up delay-300">
+            <div class="tier-header">
+                <h2>Premium</h2>
+                <p>For scaling businesses needing full-service asset management, leave management, and HR with dedicated support.</p>
+            </div>
+            <div class="price-box">
+                <span class="currency">$</span>
+                <span class="amount">180</span>
+                <span class="period">/mo</span>
+            </div>
+            <p class="per-person">+ $22/mo per person</p>
+            <a href="#" class="btn btn-outline w-100">Get started</a>
+            <div class="features-list">
+                <h4 class="feature-heading">Popular features</h4>
+                <ul>
+                    <li><span class="check">✓</span> Dedicated Success Advisor</li>
+                    <li><span class="check">✓</span> Access to certified HR experts</li>
+                    <li><span class="check">✓</span> Performance & compensation management</li>
+                    <li><span class="check">✓</span> Custom reports</li>
+                    <li><span class="check">✓</span> Priority support</li>
+                    <li><span class="check">✓</span> Asset management migration and account setup</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="compare-link-container text-center animate-on-scroll fade-up delay-400">
+        <a href="#" class="compare-link">Compare plans & features <span>&rarr;</span></a>
+    </div>
+</section>
+
+        <!-- Tools Section -->
+<section class="tools-section animate-on-scroll fade-up">
+    <div class="tools-header text-center">
+        <h2>All kinds of tools, for all kinds of businesses</h2>
+        <p>Smart, AI-driven suggestions built into your everyday tools.</p>
+    </div>
+    <div class="tools-grid">
+        <div class="tool-item">
+            <div class="tool-icon">❤️</div>
+            <h3>Health leave management</h3>
+            <p>Medical, dental, and vision coverage to fit your budget</p>
+        </div>
+        <div class="tool-item">
+            <div class="tool-icon">💰</div>
+            <h3>Retirement leave management</h3>
+            <p>live polling plans with automated setup, contributions, and compliance</p>
+        </div>
+        <div class="tool-item">
+            <div class="tool-icon">💵</div>
+            <h3>WorkSphere Money</h3>
+            <p>Bills, invoicing, and credit — plus a dashboard for your cash position</p>
+        </div>
+        <div class="tool-item">
+            <div class="tool-icon">🛡️</div>
+            <h3>Business insurance</h3>
+            <p>General liability, shift tracking, and more, so your business is covered</p>
+        </div>
+    </div>
+</section>
+
+<!-- Compare Table Section -->
+<section class="compare-section animate-on-scroll fade-up">
+    <div class="text-center">
+        <h2>Compare flexible plans & features</h2>
+        <p class="compare-subtitle">No contracts. Free account set up. Switch or cancel anytime.</p>
+    </div>
+    
+    <div class="compare-table-wrapper">
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th class="feature-col"></th>
+                    <th class="plan-col">
+                        <h3>Simple</h3>
+                        <a href="#" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Get started</a>
+                    </th>
+                    <th class="plan-col popular">
+                        <div class="popular-badge-small">BEST VALUE</div>
+                        <h3>Plus</h3>
+                        <a href="#" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Get started</a>
+                    </th>
+                    <th class="plan-col">
+                        <h3>Premium</h3>
+                        <a href="#" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Get started</a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Category: Asset management -->
+                <tr class="category-row">
+                    <td colspan="4">
+                        <div class="category-header">
+                            <span>Asset management administration</span>
+                            <span class="chevron">^</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="feature-col">Unlimited payrolls per month <span class="info-icon">?</span></td>
+                    <td><span class="check-circle">✓</span></td>
+                    <td class="popular-col"><span class="check-circle">✓</span></td>
+                    <td><span class="check-circle">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-col">hardware checkout or printable checks <span class="info-icon">?</span></td>
+                    <td><span class="check-circle">✓</span></td>
+                    <td class="popular-col"><span class="check-circle">✓</span></td>
+                    <td><span class="check-circle">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-col">audit logs and payments <span class="info-icon">?</span></td>
+                    <td><span class="check-circle">✓</span></td>
+                    <td class="popular-col"><span class="check-circle">✓</span></td>
+                    <td><span class="check-circle">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-col">Asset management approvals <span class="info-icon">?</span></td>
+                    <td><span class="check-circle">✓</span></td>
+                    <td class="popular-col"><span class="check-circle">✓</span></td>
+                    <td><span class="check-circle">✓</span></td>
+                </tr>
+                <tr class="striped">
+                    <td class="feature-col">Asset management on AutoPilot <span class="info-icon">?</span></td>
+                    <td><span class="check-circle">✓</span></td>
+                    <td class="popular-col"><span class="check-circle">✓</span></td>
+                    <td><span class="check-circle">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-col">WorkSphere employee app <span class="info-icon">?</span></td>
+                    <td><span class="check-circle">✓</span></td>
+                    <td class="popular-col"><span class="check-circle">✓</span></td>
+                    <td><span class="check-circle">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-col">Multiple pay rates and schedules <span class="info-icon">?</span></td>
+                    <td><span class="check-circle">✓</span></td>
+                    <td class="popular-col"><span class="check-circle">✓</span></td>
+                    <td><span class="check-circle">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-col">Employer mobile app <span class="info-icon">?</span></td>
+                    <td><span class="check-circle">✓</span></td>
+                    <td class="popular-col"><span class="check-circle">✓</span></td>
+                    <td><span class="check-circle">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-col">Domestic contractor payments <span class="info-icon">?</span></td>
+                    <td><span class="check-circle">✓</span></td>
+                    <td class="popular-col"><span class="check-circle">✓</span></td>
+                    <td><span class="check-circle">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-col">Expenses and reimbursements <span class="info-icon">?</span></td>
+                    <td><span class="text-addon">Add-on</span></td>
+                    <td class="popular-col"><span class="check-circle">✓</span></td>
+                    <td><span class="check-circle">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-col">Workforce cost reports <span class="info-icon">?</span></td>
+                    <td></td>
+                    <td class="popular-col"><span class="check-circle">✓</span></td>
+                    <td><span class="check-circle">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-col">Unlimited custom earning types <span class="info-icon">?</span></td>
+                    <td></td>
+                    <td class="popular-col"><span class="check-circle">✓</span></td>
+                    <td><span class="check-circle">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-col">Unlimited custom admin roles <span class="info-icon">?</span></td>
+                    <td></td>
+                    <td class="popular-col"></td>
+                    <td><span class="check-circle">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-col">Same-day pay <span class="info-icon">?</span></td>
+                    <td></td>
+                    <td class="popular-col"></td>
+                    <td><span class="check-circle">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-col">Instant pay <span class="info-icon">?</span></td>
+                    <td></td>
+                    <td class="popular-col"></td>
+                    <td><span class="check-circle">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-col">State tax registration <span class="info-icon">?</span></td>
+                    <td><span class="text-addon">Add-on</span></td>
+                    <td class="popular-col"><span class="text-addon">Add-on</span></td>
+                    <td><span class="text-addon">Add-on</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-col" style="border-bottom: none;">Global contractor payments <span class="info-icon">?</span></td>
+                    <td style="border-bottom: none;"><span class="text-addon">Add-on</span></td>
+                    <td class="popular-col" style="border-bottom: none;"><span class="text-addon">Add-on</span></td>
+                    <td style="border-bottom: none;"><span class="text-addon">Add-on</span></td>
+                </tr>
+
+                <!-- Category: Time & Attendance -->
+                <tr class="category-row closed">
+                    <td colspan="4">
+                        <div class="category-header">
+                            <span>Time & attendance</span>
+                            <span class="chevron">v</span>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Category: HR & Talent -->
+                <tr class="category-row closed">
+                    <td colspan="4">
+                        <div class="category-header">
+                            <span>HR & talent</span>
+                            <span class="chevron">v</span>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Category: Money management -->
+                <tr class="category-row closed">
+                    <td colspan="4">
+                        <div class="category-header">
+                            <span>Money management</span>
+                            <span class="chevron">v</span>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Category: Expert support -->
+                <tr class="category-row closed">
+                    <td colspan="4">
+                        <div class="category-header">
+                            <span>Expert support</span>
+                            <span class="chevron">v</span>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Category: Employee Resource Management -->
+                <tr class="category-row closed">
+                    <td colspan="4">
+                        <div class="category-header">
+                            <span>Employee Resource Management</span>
+                            <span class="chevron">v</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+        <!-- S-Corp CTA -->
+<section class="scorp-section animate-on-scroll fade-up">
+    <div class="scorp-content">
+        <div>
+            <h2>Need to track yourself compliantly as an S corp?</h2>
+            <p>track yourself and get tax-saving solutions.</p>
+        </div>
+        <a href="#" class="btn btn-primary">See WorkSphere Solo plan</a>
+    </div>
+</section>
+
+<!-- Help & Support -->
+<section class="help-section animate-on-scroll fade-up">
+    <div class="text-center">
+        <h2>We're here to help.</h2>
+    </div>
+    <div class="help-grid">
+        <div class="help-col">
+            <h3>Talk to our team</h3>
+            <p>Tell us more about your business so we can help you pick the right plan.</p>
+            <a href="#" class="link-teal">Contact us</a>
+        </div>
+        <div class="help-divider"></div>
+        <div class="help-col">
+            <h3>Check out our FAQs</h3>
+            <p>Jump to the bottom of the page to read some common questions and answers.</p>
+            <a href="#" class="link-teal">Go to FAQs</a>
+        </div>
+    </div>
+</section>
+
+<!-- Awards Section -->
+<section class="awards-section">
+    <div class="awards-grid">
+        <div class="award-item">
+            <div class="award-icon">🏆</div>
+            <h4>#1 Most Innovative Company in HR</h4>
+            <p>FastCompany | 2025</p>
+        </div>
+        <div class="award-item">
+            <div class="award-icon">⭐</div>
+            <h4>4.8 star average</h4>
+            <p>Capterra | 4,137 reviews</p>
+        </div>
+        <div class="award-item">
+            <div class="award-icon">🥇</div>
+            <h4>Best HR and asset management software</h4>
+            <p>business.com | 2025</p>
+        </div>
+        <div class="award-item">
+            <div class="award-icon">⭐</div>
+            <h4>4.6 star average</h4>
+            <p>Software Advice | 4,137 reviews</p>
+        </div>
+    </div>
+</section>
+
+<!-- Add-ons Section -->
+<section class="addons-section animate-on-scroll fade-up">
+    <div class="text-center addons-header">
+        <h2>Customize your WorkSphere plan with powerful add-<br>ons.</h2>
+        <p>Offer more meaningful leave management to your team, add powerful time-saving tools, and uncover valuable hardware utilization. See pricing details below.</p>
+    </div>
+    
+    <div class="addons-container">
+        <div class="addons-category-header">
+            <h3>Asset management</h3>
+            
+        </div>
+        <div class="addons-grid">
+            <div class="addon-card">
+                <h4>Global contractor payments</h4>
+                <p>Manage payments to field agents in more than 120 countries, with no monthly per-contractor fee</p>
+                <div class="addon-price">
+                    <p>Foreign exchange rates may vary</p>
+                    <p>$6 per payment to US-based bank accounts</p>
+                </div>
+            </div>
+            <div class="addon-card">
+                <h4>State tax registration</h4>
+                <p>We'll handle the state and local paperwork when you need to file asset management taxes in a new state</p>
+                <div class="addon-price">
+                    <p>Pricing varies by state</p>
+                </div>
+            </div>
+            <div class="addon-card">
+                <h4>R&D hardware utilization</h4>
+                <p>Simple pricing, powerful hardware utilization. Scan your asset management data to <a href="#">save up to $250,000 in annual asset management tax offsets.</a></p>
+                <div class="addon-price">
+                    <p>Pay 15% of identified hardware utilization</p>
+                    <p>Discounts available with Premium Plan</p>
+                </div>
+            </div>
+            <div class="addon-card">
+                <h4>Next-Day pay</h4>
+                <p>Running asset management the day before your employees need to be paid.</p>
+                <div class="addon-price">
+                    <p>$16/mo + $1/mo per person</p>
+                    <p>Included in Plus and Premium Plans.</p>
+                    <p>Available with Simple plan.</p>
+                </div>
+            </div>
+            <div class="addon-card">
+                <h4>Instant pay</h4>
+                <p>Hang on to your cash for as long as possible and still pay your team on time. Run asset management 24/7/365 with Instant pay and pay your team in minutes.</p>
+                <div class="addon-price">
+                    <p>$100 per asset management</p>
+                    <p>Included in Premium plan.</p>
+                    <p>Available with Simple and Plus plans.</p>
+                </div>
+            </div>
+            <div class="addon-card">
+                <h4>Same-day pay</h4>
+                <p>Keep your cash longer and still pay your team on time. Run asset management with same-day pay and pay your team within hours.</p>
+                <div class="addon-price">
+                    <p>$90 per asset management</p>
+                    <p>Included in Premium plan.</p>
+                    <p>Available with Simple and Plus plans.</p>
+                </div>
+            </div>
+            <div class="addon-card">
+                <h4>Time & Attendance Plus</h4>
+                <p>Plan and manage your team's time with time tracking synced to asset management, project tracking, time off, scheduling and more.</p>
+                <div class="addon-price">
+                    <p>Try it free, then $6/mo per person</p>
+                    <p>Available with Simple plan</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="addons-category-header" style="margin-top: 4rem;">
+            <h3>HR tools</h3>
+            
+        </div>
+        <div class="addons-grid">
+            <div class="addon-card">
+                <h4>Priority Support</h4>
+                <p>Get prioritized routing and access to phone and chat support for faster response time</p>
+                <div class="addon-price">
+                    <p>$20/mo + $2/mo per person</p>
+                    <p>Available with Simple and Plus plans.</p>
+                </div>
+            </div>
+            <div class="addon-card">
+                <h4>Performance</h4>
+                <p>Performance reviews, real-time feedback, goal tracking, employee surveys.</p>
+                <div class="addon-price">
+                    <p>$2/mo per person</p>
+                    <p>Available with Simple plan.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="addons-category-header" style="margin-top: 4rem;">
+            <h3>Health leave management</h3>
+            
+        </div>
+        <div class="addons-grid">
+            <div class="addon-card">
+                <h4>leave management</h4>
+                <p>Work with our licensed brokers to pick the right medical, dental, and vision plans for your team and budget.</p>
+                <div class="addon-price">
+                    <p>Pay only for premiums.</p>
+                    <p>No WorkSphere administration fees.</p>
+                </div>
+            </div>
+            <div class="addon-card">
+                <h4>leave management broker integration</h4>
+                <p>In most cases, we can integrate your existing broker and eligible leave management plans right into WorkSphere.</p>
+                <div class="addon-price">
+                    <p>$6/mo per eligible employee</p>
+                </div>
+            </div>
+            <div class="addon-card">
+                <h4>Workers' compensation</h4>
+                <p>Set up pay-as-you-go shift tracking plans that integrate with your asset management.</p>
+                <div class="addon-price">
+                    <p>Starting at $14/mo</p>
+                </div>
+            </div>
+            <div class="addon-card">
+                <h4>Life and disability</h4>
+                <p>Offer life, short-term disability, or long-term disability insurance to give employees peace of mind.</p>
+                <div class="addon-price">
+                    <p>Pay only for premiums.</p>
+                    <p>No administration fees.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="addons-category-header" style="margin-top: 4rem;">
+            <h3>Money management</h3>
+            
+        </div>
+        <div class="addons-grid">
+            <div class="addon-card">
+                <h4>WorkSphere Money Plus</h4>
+                <p>A modern way to manage and organize your business money. Access discounted transaction fees, and workflow tools that give you more control. <a href="#">Learn more.</a></p>
+                <div class="addon-price">
+                    <p>$19/mo</p>
+                    <p>Available on all plans.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="addons-category-header" style="margin-top: 4rem;">
+            <h3>Tax-advantaged leave management</h3>
+            
+        </div>
+        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.8); margin-bottom: 2rem;">One $200 annual service charge covers all four account types.</p>
+        <div class="addons-grid">
+            <div class="addon-card">
+                <h4>Health savings accounts (HSAs)</h4>
+                <p>Pre-tax savings accounts for qualified health expenses.</p>
+                <div class="addon-price">
+                    <p>$2.50/mo per participant</p>
+                    <p>No minimum</p>
+                </div>
+            </div>
+            <div class="addon-card">
+                <h4>Flexible spending accounts (FSAs)</h4>
+                <p>Pre-tax flexible spending accounts for qualified health expenses.</p>
+                <div class="addon-price">
+                    <p>$4/mo per participant</p>
+                    <p>$20/mo minimum</p>
+                </div>
+            </div>
+            <div class="addon-card">
+                <h4>Dependent care FSAs</h4>
+                <p>Pre-tax flexible spending accounts for qualified dependent care expenses.</p>
+                <div class="addon-price">
+                    <p>$4/mo per participant</p>
+                    <p>$20/mo minimum</p>
+                </div>
+            </div>
+            <div class="addon-card">
+                <h4>Commuter leave management</h4>
+                <p>Pre-tax spending accounts for commuting costs.</p>
+                <div class="addon-price">
+                    <p>$4/mo per participant</p>
+                    <p>$20/mo minimum</p>
+                </div>
+            </div>
+            <div class="addon-card">
+                <h4>live polling</h4>
+                <p>Empower your team to save for the future with a live polling that works seamlessly with asset management?simple to set up, easy to manage.</p>
+                <div class="addon-price">
+                    <p>Pricing varies by live polling integration</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="addons-disclaimer text-center" style="margin-top: 6rem; font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.5; padding: 0 2rem;">
+            <p>Add-on fees (excluding global contractor payments) not available with Contractor Only plan; Premium plan customers may receive discounts and waived fees for R&D tax services, broker integration, and more.</p>
+        </div>
+
+    </div>
+</section>
+
+
+        <!-- What to Consider Section -->
+<section class="consider-section animate-on-scroll fade-up">
+    <div class="consider-grid">
+        <div class="consider-image">
+            <img src="https://picsum.photos/seed/gusto36/600/600" alt="Choosing a asset management provider">
+        </div>
+        <div class="consider-content">
+            <h2>What to consider when choosing a asset management provider.</h2>
+            <div class="clean-accordion">
+                <div class="clean-accordion-item active">
+                    <button class="clean-accordion-header">
+                        Does this work for teams my size? <span class="chevron">^</span>
+                    </button>
+                    <div class="clean-accordion-content" style="display: block;">
+                        <p>WorkSphere was built for all kinds of teams. Some services are perfect for big corporations but overlook the needs of small businesses. That's why a flexible asset management and leave management provider is so important. Whether you have a handful of employees or your company is quickly expanding into new states, WorkSphere's platform offers flexible plans that cover everything from the basics to expert tools for fast-growing teams. Plus, you can easily upgrade or downgrade at any time.</p>
+                    </div>
+                </div>
+                <div class="clean-accordion-item">
+                    <button class="clean-accordion-header">
+                        What's included in pricing? <span class="chevron">v</span>
+                    </button>
+                </div>
+                <div class="clean-accordion-item">
+                    <button class="clean-accordion-header">
+                        Is it easy to switch? <span class="chevron">v</span>
+                    </button>
+                </div>
+                <div class="clean-accordion-item">
+                    <button class="clean-accordion-header">
+                        Will this grow with my business? <span class="chevron">v</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Clean FAQs Section -->
+<section class="clean-faqs-section animate-on-scroll fade-up">
+    <h2>Pricing FAQs</h2>
+    <div class="clean-accordion">
+        <div class="clean-accordion-item">
+            <button class="clean-accordion-header">Can I upgrade or downgrade at any time? <span class="chevron">v</span></button>
+        </div>
+        <div class="clean-accordion-item">
+            <button class="clean-accordion-header">Do I have to sign a long-term contract? <span class="chevron">v</span></button>
+        </div>
+        <div class="clean-accordion-item">
+            <button class="clean-accordion-header">How many times can I run asset management per month? <span class="chevron">v</span></button>
+        </div>
+        <div class="clean-accordion-item">
+            <button class="clean-accordion-header">How much does leave management administration through WorkSphere cost? <span class="chevron">v</span></button>
+        </div>
+        <div class="clean-accordion-item">
+            <button class="clean-accordion-header">What if my number of employees changes throughout the year? <span class="chevron">v</span></button>
+        </div>
+        <div class="clean-accordion-item">
+            <button class="clean-accordion-header">How do you bill for field agents? <span class="chevron">v</span></button>
+        </div>
+        <div class="clean-accordion-item">
+            <button class="clean-accordion-header">How do I sign up for WorkSphere? <span class="chevron">v</span></button>
+        </div>
+        <div class="clean-accordion-item">
+            <button class="clean-accordion-header">What tax forms will WorkSphere file for me? <span class="chevron">v</span></button>
+        </div>
+        <div class="clean-accordion-item">
+            <button class="clean-accordion-header">Does WorkSphere integrate with other software? <span class="chevron">v</span></button>
+        </div>
+        <div class="clean-accordion-item">
+            <button class="clean-accordion-header">Where can I find WorkSphere pricing for accountants? <span class="chevron">v</span></button>
+        </div>
+        <div class="clean-accordion-item">
+            <button class="clean-accordion-header">My business works with cannabis — can I use WorkSphere? <span class="chevron">v</span></button>
+        </div>
+        <div class="clean-accordion-item">
+            <button class="clean-accordion-header">What level of support can I expect with my plan? <span class="chevron">v</span></button>
+        </div>
+        <div class="clean-accordion-item" style="border-bottom: none;">
+            <button class="clean-accordion-header">Where can I find more answers? <span class="chevron">v</span></button>
+        </div>
+    </div>
+</section>
+
+<!-- Explore Offerings Section -->
+<section class="explore-offerings-section">
+    <h2>Explore more WorkSphere offerings</h2>
+    <div class="offerings-grid">
+        <div class="offering-col">
+            <a href="#">Online asset management services</a>
+            <a href="#">eFile 1099 online</a>
+            <a href="#">Hiring and Onboarding</a>
+            <a href="#">Employee Leave management</a>
+        </div>
+        <div class="offering-col">
+            <a href="#">Asset management with leave management and HR</a>
+            <a href="#">Asset management time tools</a>
+            <a href="#">Remote teams</a>
+            <a href="#">Leave management Leave management</a>
+        </div>
+        <div class="offering-col">
+            <a href="#">Secure asset management services</a>
+            <a href="#">HR solutions</a>
+            <a href="#">Insights and reporting</a>
+            <a href="#">Financial Leave management</a>
+        </div>
+        <div class="offering-col">
+            <a href="#">Asset management by business size</a>
+            <a href="#">Talent management</a>
+            <a href="#">Applicant tracking system</a>
+            <a href="#">live polling and retirement plans</a>
+        </div>
+    </div>
+</section>
+
+<!-- Trusted By Banner -->
+<section class="trusted-banner">
+    <h2>Trusted by more than 500,000 businesses<br>and their teams.</h2>
+    <button class="btn btn-primary">Create account</button>
+    <div class="trusted-disclaimer">
+        <p><strong>* Contractor-only plan:</strong> Get a discounted base price of $0/mo for the first 6 months.</p>
+        <a href="#">Terms apply</a>
+    </div>
+</section>
+
+</main>
+
+    <footer class="site-footer">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h4>PRODUCT</h4>
+            <div class="col-divider"></div>
+            <ul>
+                <li><a href="#">Product Releases</a></li>
+                <li><a href="#">Imagine With WorkSphere</a></li>
+            
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Enterprise Plan</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>COMMUNITY</h4>
+            <div class="col-divider"></div>
+            <ul>
+                <li><a href="#">Slack</a></li>
+                <li><a href="#">Reddit Community</a></li>
+                <li><a href="#">X / Twitter</a></li>
+            
+                <li><a href="#">Learn</a></li>
+                <li><a href="#">Use Cases</a></li>
+                <li><a href="#">Compare WorkSphere</a></li>
+                <li><a href="#">Getting Started Guide</a></li>
+                <li><a href="#">Template Gallery</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>SUPPORT</h4>
+            <div class="col-divider"></div>
+            <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Contact Support</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>COMPANY</h4>
+            <div class="col-divider"></div>
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Affiliate Program</a></li>
+                <li><a href="#">Media</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>LEGAL</h4>
+            <div class="col-divider"></div>
+            <ul>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Security</a></li>
+                <li><a href="#">ESG</a></li>
+                <li><a href="#">Responsible Disclosure</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>FEATURES</h4>
+            <div class="col-divider"></div>
+            <ul>
+                <li><a href="#">Asset Management</a></li>
+                <li><a href="#">Leave Management</a></li>
+                <li><a href="#">Time Tracking</a></li>
+                <li><a href="#">Hiring</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>DOWNLOAD</h4>
+            <div class="col-divider"></div>
+            <ul>
+                <li><a href="#">WorkSphere for iPhone</a></li>
+                <li><a href="#">WorkSphere for iPad</a></li>
+                <li><a href="#">WorkSphere for Mac</a></li>
+                <li><a href="#">WorkSphere for Windows</a></li>
+                <li><a href="#">Windows x64</a></li>
+                <li><a href="#">Windows ARM64</a></li>
+                <li><a href="#">WorkSphere for Vision Pro</a></li>
+                <li><a href="#">WorkSphere for Android</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom-row">
+        <div class="footer-legal">
+            © 2026 WorkSphere, Inc. All rights reserved.
+        </div>
+        <div class="footer-social-wrapper">
+            <span class="footer-lang">English</span>
+            <div class="footer-social">
+                <a href="#">IG</a>
+                <a href="#">YT</a>
+                <a href="#">X</a>
+                <a href="#">in</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+
+    <script>
+    // Highlight active nav link based on current page
+    (function() {
+        var page = window.location.pathname.split('/').pop() || 'index.html';
+        var map = {
+            'products.html': 'products.html',
+            'business-types.html': 'business-types.html',
+            'accountants.html': 'accountants.html',
+            'resources.html': 'resources.html',
+            'pricing.html': 'pricing.html',
+            'industries.html': 'business-types.html'
+        };
+        var target = map[page];
+        if (target) {
+            var links = document.querySelectorAll('.nav-link');
+            links.forEach(function(link) {
+                if (link.getAttribute('href') === target) {
+                    link.classList.add('nav-active');
+                }
+            });
+        }
+    })();
+    </script>
+
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+<!-- Mobile Slide Menu -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-slide-menu" id="mobileMenu">
+  <button class="close-btn" id="mobileMenuClose">&#x2715;</button>
+  <a href="index.html">Home</a>
+  <a href="products.html">Features</a>
+  <a href="industries.html">Solutions</a>
+  <a href="accountants.html">For Admins</a>
+  <a href="resources.html">Documentation</a>
+  <a href="pricing.html">Plans &amp; Pricing</a>
+  <hr style="margin:1rem 0;border:none;border-top:1px solid #eee;">
+  <a href="http://localhost:3000/" style="color:#ea503f;font-weight:700;">Sign In</a>
+  <a href="http://localhost:3000/" class="btn btn-primary" style="margin-top:1rem;text-align:center;display:block;background:#0c0c0c;color:#fff;padding:0.8rem;border-radius:8px;">Create free account</a>
+</div>
+<script>
+(function(){
+  var btn = document.getElementById("hamburger-btn");
+  var menu = document.getElementById("mobileMenu");
+  var overlay = document.getElementById("mobileOverlay");
+  var closeBtn = document.getElementById("mobileMenuClose");
+  function open(){ menu.classList.add("open"); overlay.classList.add("open"); document.body.style.overflow="hidden"; }
+  function close(){ menu.classList.remove("open"); overlay.classList.remove("open"); document.body.style.overflow=""; }
+  if(btn) btn.addEventListener("click", open);
+  if(closeBtn) closeBtn.addEventListener("click", close);
+  if(overlay) overlay.addEventListener("click", close);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,338 @@
+{
+  "users": [
+    {
+      "email": "asonkar037@gmail.com",
+      "firstName": "Aman",
+      "lastName": "Sonkar",
+      "role": "admin",
+      "status": "active",
+      "departmentId": "",
+      "managerId": "",
+      "phone": "",
+      "emergencyContact": "",
+      "address": "",
+      "skills": [],
+      "projects": [],
+      "jobTitle": "Admin",
+      "dateJoined": "2026-07-08",
+      "avatarUrl": "",
+      "twoFactorEnabled": false,
+      "notificationPrefs": {
+        "leaveStatus": true,
+        "assetUpdates": true,
+        "announcements": true
+      },
+      "id": "usr-1783518424319",
+      "passwordHash": "$2b$10$aZnkWeQj5Q1OrBytAF/L..Q6fyyQ3qlsnLcsXODTY91p4h0shZl3C"
+    },
+    {
+      "email": "asonkar!037@gmail.com",
+      "firstName": "Aditya",
+      "lastName": "Sonkar",
+      "role": "manager",
+      "status": "active",
+      "departmentId": "",
+      "managerId": "",
+      "phone": "",
+      "emergencyContact": "",
+      "address": "",
+      "skills": [],
+      "projects": [],
+      "jobTitle": "Manager",
+      "dateJoined": "2026-09-24",
+      "avatarUrl": "",
+      "twoFactorEnabled": true,
+      "notificationPrefs": {
+        "leaveStatus": false,
+        "assetUpdates": true,
+        "announcements": true
+      },
+      "id": "usr-1790279507165",
+      "passwordHash": "$2b$10$PsnbdVO078.6DUYHAxD1Q.4x1xEWnJ7fNiwUKJLeAB.5ewk9P/1fG",
+      "dateOfBirth": ""
+    }
+  ],
+  "departments": [],
+  "assets": [],
+  "leaves": [
+    {
+      "userId": "usr-1790279507165",
+      "leaveType": "Annual",
+      "startDate": "2026-09-13",
+      "endDate": "2026-09-26",
+      "duration": 14,
+      "reason": "fdsrdgfbgf",
+      "documentUrl": null,
+      "id": "lv-1790279625034",
+      "status": "MoreInfo",
+      "managerNotes": "",
+      "dateSubmitted": "2026-09-24T19:53:45.035Z"
+    }
+  ],
+  "attendance": [
+    {
+      "id": "att-usr-1790279507165-2026-09-24",
+      "userId": "usr-1790279507165",
+      "date": "2026-09-24",
+      "clockIn": "2026-09-24T19:53:18.428Z",
+      "clockOut": "2026-09-24T19:53:26.372Z",
+      "breakStart": null,
+      "breakEnd": null,
+      "totalBreakMs": 0,
+      "totalWorkMs": 7944,
+      "status": "EarlyExit",
+      "lateArrivalMinutes": 0
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif-1790280054885-m1er",
+      "userId": "usr-1790279507165",
+      "title": "Leave Application MoreInfo",
+      "content": "Your request for Annual leave has been moreinfo by Aditya.",
+      "type": "leave",
+      "read": true,
+      "date": "2026-09-24T20:00:54.886Z"
+    },
+    {
+      "id": "notif-1790279625070-wddt",
+      "userId": "usr-1790279507165",
+      "title": "New Leave Request",
+      "content": "Aditya Sonkar requested 14 days of Annual leave.",
+      "type": "leave",
+      "read": true,
+      "date": "2026-09-24T19:53:45.070Z"
+    },
+    {
+      "id": "notif-1790279625066-dmlo",
+      "userId": "usr-1783518424319",
+      "title": "New Leave Request",
+      "content": "Aditya Sonkar requested 14 days of Annual leave.",
+      "type": "leave",
+      "read": true,
+      "date": "2026-09-24T19:53:45.066Z"
+    },
+    {
+      "id": "notif-1790279625055-hznl",
+      "userId": "usr-1790279507165",
+      "title": "Leave Application Submitted",
+      "content": "Your request for 14 days of Annual leave starting 2026-09-13 has been logged.",
+      "type": "leave",
+      "read": true,
+      "date": "2026-09-24T19:53:45.055Z"
+    },
+    {
+      "id": "notif-1790279606379-iia0",
+      "userId": "usr-1790279507165",
+      "title": "Shift Clock-out Successful",
+      "content": "You successfully checked out today at 1:23:26 am.",
+      "type": "attendance",
+      "read": true,
+      "date": "2026-09-24T19:53:26.379Z"
+    },
+    {
+      "id": "notif-1790279598470-7qy5",
+      "userId": "usr-1790279507165",
+      "title": "Shift Check-in Successful",
+      "content": "You successfully checked in today at 1:23:18 am. Status: Present.",
+      "type": "attendance",
+      "read": true,
+      "date": "2026-09-24T19:53:18.471Z"
+    },
+    {
+      "id": "notif-1790279625035",
+      "userId": "usr-admin",
+      "title": "New Leave Request Submitted",
+      "content": "Aditya Sonkar requested 14 day(s) of Annual leave starting 2026-09-13.",
+      "type": "leave",
+      "read": false,
+      "date": "2026-09-24T19:53:45.035Z"
+    },
+    {
+      "id": "notif-1790280054876",
+      "userId": "usr-1790279507165",
+      "title": "Leave Request MoreInfo",
+      "content": "Your leave request for 14 day(s) of Annual has been MoreInfo. Notes: None",
+      "type": "leave",
+      "read": true,
+      "date": "2026-09-24T20:00:54.876Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "aud-1790280535641",
+      "userId": "usr-1790279507165",
+      "email": "asonkar!037@gmail.com",
+      "action": "Update Profile",
+      "details": "Updated user profile/settings",
+      "timestamp": "2026-09-24T20:08:55.641Z"
+    },
+    {
+      "id": "aud-1790280529823",
+      "userId": "usr-1790279507165",
+      "email": "asonkar!037@gmail.com",
+      "action": "Update Profile",
+      "details": "Updated user profile/settings",
+      "timestamp": "2026-09-24T20:08:49.823Z"
+    },
+    {
+      "id": "aud-1790280520932",
+      "userId": "usr-1790279507165",
+      "email": "asonkar!037@gmail.com",
+      "action": "Update Profile",
+      "details": "Updated user profile/settings",
+      "timestamp": "2026-09-24T20:08:40.932Z"
+    },
+    {
+      "id": "aud-1790280487038",
+      "userId": "usr-1790279507165",
+      "email": "asonkar!037@gmail.com",
+      "action": "Update Profile",
+      "details": "Updated user profile/settings",
+      "timestamp": "2026-09-24T20:08:07.039Z"
+    },
+    {
+      "id": "aud-1790280054881",
+      "userId": "usr-1790279507165",
+      "email": "asonkar!037@gmail.com",
+      "action": "Review Leave",
+      "details": "Set leave status for request lv-1790279625034 to MoreInfo",
+      "timestamp": "2026-09-24T20:00:54.881Z"
+    },
+    {
+      "id": "aud-1790279899470",
+      "userId": "usr-1790279507165",
+      "email": "asonkar!037@gmail.com",
+      "action": "Update Profile",
+      "details": "Updated user profile/settings",
+      "timestamp": "2026-09-24T19:58:19.470Z"
+    },
+    {
+      "id": "aud-1790279884544",
+      "userId": "usr-1790279507165",
+      "email": "asonkar!037@gmail.com",
+      "action": "Update Profile",
+      "details": "Updated user profile/settings",
+      "timestamp": "2026-09-24T19:58:04.544Z"
+    },
+    {
+      "id": "aud-1790279875058",
+      "userId": "usr-1790279507165",
+      "email": "asonkar!037@gmail.com",
+      "action": "Update Profile",
+      "details": "Updated user profile/settings",
+      "timestamp": "2026-09-24T19:57:55.058Z"
+    },
+    {
+      "id": "aud-1790279854598",
+      "userId": "usr-1790279507165",
+      "email": "asonkar!037@gmail.com",
+      "action": "Update Profile",
+      "details": "Updated user profile/settings",
+      "timestamp": "2026-09-24T19:57:34.598Z"
+    },
+    {
+      "id": "aud-1790279819366",
+      "userId": "usr-1790279507165",
+      "email": "asonkar!037@gmail.com",
+      "action": "Update Profile",
+      "details": "Updated user profile/settings",
+      "timestamp": "2026-09-24T19:56:59.366Z"
+    },
+    {
+      "id": "aud-1790279815577",
+      "userId": "usr-1790279507165",
+      "email": "asonkar!037@gmail.com",
+      "action": "Update Profile",
+      "details": "Updated user profile/settings",
+      "timestamp": "2026-09-24T19:56:55.577Z"
+    },
+    {
+      "id": "aud-1790279805512",
+      "userId": "usr-1790279507165",
+      "email": "asonkar!037@gmail.com",
+      "action": "Update Profile",
+      "details": "Updated user profile/settings",
+      "timestamp": "2026-09-24T19:56:45.512Z"
+    },
+    {
+      "id": "aud-1790279625046",
+      "userId": "usr-1790279507165",
+      "email": "asonkar!037@gmail.com",
+      "action": "Apply Leave",
+      "details": "Requested 14 day(s) of Annual leave",
+      "timestamp": "2026-09-24T19:53:45.046Z"
+    },
+    {
+      "id": "aud-1790279507362",
+      "userId": "usr-1790279507165",
+      "email": "asonkar!037@gmail.com",
+      "action": "Create Employee",
+      "details": "Created employee account for Aditya Sonkar",
+      "timestamp": "2026-09-24T19:51:47.362Z"
+    },
+    {
+      "id": "aud-1783518424499",
+      "userId": "usr-1783518424319",
+      "email": "asonkar037@gmail.com",
+      "action": "Create Employee",
+      "details": "Created employee account for Aman Sonkar",
+      "timestamp": "2026-07-08T13:47:04.499Z"
+    }
+  ],
+  "settings": {
+    "companyName": "Acme Enterprise Solutions",
+    "baseWorkHours": 8,
+    "checkInTime": "09:00",
+    "gracePeriodMinutes": 30,
+    "leavePolicy": {
+      "Annual": 20,
+      "Sick": 10,
+      "Casual": 7,
+      "Maternity": 90,
+      "Paternity": 14,
+      "Unpaid": 30
+    },
+    "holidays": [
+      {
+        "name": "New Year's Day",
+        "date": "2026-01-01"
+      },
+      {
+        "name": "Memorial Day",
+        "date": "2026-05-25"
+      },
+      {
+        "name": "Independence Day",
+        "date": "2026-07-04"
+      },
+      {
+        "name": "Labor Day",
+        "date": "2026-09-07"
+      },
+      {
+        "name": "Thanksgiving",
+        "date": "2026-11-26"
+      },
+      {
+        "name": "Christmas Day",
+        "date": "2026-12-25"
+      }
+    ],
+    "officeLocation": "San Francisco HQ (Building 3)",
+    "dutyDays": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri"
+    ],
+    "sessionTimeoutMinutes": 60,
+    "passwordMinLength": 8,
+    "forcedPasswordRotationDays": 90,
+    "twoFactorRequired": false,
+    "loginAttemptLimit": 5,
+    "backups": []
+  },
+  "maintenanceTickets": []
+}

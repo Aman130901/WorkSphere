@@ -998,41 +998,41 @@ body {
 
 .img-1 {
     width: 160px;
-    height: 110px;
-    margin-top: -55px;
+    height: 120px;
+    margin-top: -60px;
     margin-left: -80px;
     animation-delay: 0s;
 }
 
 .img-2 {
-    width: 110px;
-    height: 150px;
-    margin-top: -75px;
-    margin-left: -55px;
+    width: 160px;
+    height: 120px;
+    margin-top: -60px;
+    margin-left: -80px;
     animation-delay: -6s;
 }
 
 .img-3 {
-    width: 140px;
-    height: 100px;
-    margin-top: -50px;
-    margin-left: -70px;
+    width: 160px;
+    height: 120px;
+    margin-top: -60px;
+    margin-left: -80px;
     animation-delay: -12s;
 }
 
 .img-4 {
-    width: 150px;
-    height: 90px;
-    margin-top: -45px;
-    margin-left: -75px;
+    width: 160px;
+    height: 120px;
+    margin-top: -60px;
+    margin-left: -80px;
     animation-delay: -18s;
 }
 
 .img-5 {
-    width: 120px;
-    height: 160px;
-    margin-top: -80px;
-    margin-left: -60px;
+    width: 160px;
+    height: 120px;
+    margin-top: -60px;
+    margin-left: -80px;
     animation-delay: -24s;
 }
 

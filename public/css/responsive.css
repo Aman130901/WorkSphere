@@ -310,6 +310,23 @@ html, body {
     .compare-table {
         min-width: 700px !important;
     }
+    
+    /* Consider Grid Mobile Fix */
+    .consider-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+    .consider-image {
+        width: 100% !important;
+    }
+    .consider-image img {
+        width: 100% !important;
+        height: auto !important;
+    }
+    .consider-content {
+        width: 100% !important;
+    }
 }
 
 @media (max-width: 480px) {

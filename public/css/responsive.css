@@ -1,0 +1,132 @@
+/* ============================================================
+   WorkSphere — Global Responsive Styles
+   Ensures all public pages are fully mobile-responsive
+   ============================================================ */
+
+/* --- General Breakpoints --- */
+@media (max-width: 1024px) {
+    /* Tablet */
+    .hero-title { font-size: 3.5rem !important; }
+    .hero-content { padding-top: 6rem !important; }
+    .mega-menu { display: none !important; } /* Disable hover mega menus on tablet/mobile */
+}
+
+@media (max-width: 768px) {
+    /* Mobile General */
+    body { font-size: 14px; }
+    .container { padding: 0 1rem; }
+    
+    /* Typography */
+    h1, .hero-title { font-size: 2.5rem !important; line-height: 1.1 !important; }
+    h2, .section-title { font-size: 2rem !important; }
+    h3 { font-size: 1.5rem !important; }
+    .hero-subtitle, .hero-desc { font-size: 1rem !important; }
+
+    /* Navbar */
+    .navbar {
+        width: 100% !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+        top: 0 !important;
+        border: none !important;
+        border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+        padding: 0.8rem 1rem !important;
+    }
+    
+    .nav-links, .nav-right, .sign-in {
+        display: none !important; /* Hide desktop nav */
+    }
+
+    .hamburger-btn {
+        display: block !important;
+        order: 3;
+    }
+
+    .nav-left { width: 100%; justify-content: space-between; }
+    .navbar .logo { font-size: 1.4rem; }
+
+    /* Hero Sections */
+    .hero-content { padding-top: 5rem !important; padding-bottom: 3rem !important; }
+    .hero-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+    .hero-text-col, .hero-visual-col { text-align: center; }
+    .hero-actions { justify-content: center; flex-direction: column; width: 100%; gap: 1rem; }
+    .hero-actions a, .hero-actions button { width: 100%; text-align: center; justify-content: center; }
+    
+    .hero-image-wrapper { width: 100% !important; height: auto !important; min-height: 250px; }
+
+    /* Grids & Cards */
+    .grid, .features-grid, .pricing-grid, .products-grid, .industry-grid, .tools-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1rem !important;
+    }
+    .pricing-card { margin-bottom: 1.5rem; }
+
+    /* Feature Sections */
+    .feature-row { flex-direction: column !important; text-align: center; gap: 2rem !important; }
+    .feature-row.reverse { flex-direction: column !important; }
+    .feature-text { max-width: 100% !important; padding: 0 !important; }
+    .feature-image { width: 100% !important; }
+
+    /* Footer */
+    .footer { padding: 3rem 1rem !important; }
+    .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 2rem !important; }
+    .footer-bottom-row { flex-direction: column; text-align: center; gap: 1rem; }
+    
+    /* specific overrides */
+    .marquee-container { transform: none !important; }
+}
+
+@media (max-width: 480px) {
+    /* Small Mobile */
+    h1, .hero-title { font-size: 2rem !important; }
+    .stats-grid { grid-template-columns: 1fr !important; }
+    .footer-grid { grid-template-columns: 1fr !important; }
+}
+
+/* --- Mobile Slide Menu --- */
+.mobile-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 2000;
+}
+.mobile-overlay.open { opacity: 1; visibility: visible; }
+
+.mobile-slide-menu {
+    position: fixed;
+    top: 0; right: -300px; width: 280px; height: 100vh;
+    background: #ffffff;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    z-index: 2001;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 1.5rem 2rem;
+    overflow-y: auto;
+}
+.mobile-slide-menu.open { right: 0; }
+
+.mobile-slide-menu .close-btn {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    background: none; border: none;
+    font-size: 1.5rem; cursor: pointer; color: #333;
+}
+
+.mobile-slide-menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.mobile-slide-menu a:hover { color: var(--primary-red, #ea503f); }

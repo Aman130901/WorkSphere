@@ -361,7 +361,22 @@ html, body {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 1.5rem !important;
     }
+
+    /* Split Section Mobile Fix (Business Size & Industry) */
+    .split-section {
+        flex-direction: column !important;
+        padding: 4rem 1.5rem !important;
+        gap: 2rem !important;
+    }
+    .split-left {
+        position: static !important;
+        margin-bottom: 1rem !important;
+    }
+    .split-right {
+        width: 100% !important;
+    }
 }
+
 
 @media (max-width: 480px) {
     .awards-grid {

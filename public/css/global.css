@@ -385,3 +385,25 @@ img, video { max-width: 100%; height: auto; }
   .search-mockup { flex-direction: column !important; }
   .search-mockup button { width: 100% !important; border-radius: 8px !important; }
 }
+
+/* --- Global Marquee Utilities --- */
+.marquee-wrapper {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.marquee-track {
+    display: flex;
+    width: max-content;
+    flex-shrink: 0;
+}
+.track-left {
+    animation: scroll-left 30s linear infinite;
+}
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}

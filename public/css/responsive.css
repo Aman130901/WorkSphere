@@ -81,13 +81,14 @@ html, body {
 
     /* Social Proof Section Fixes */
     .social-proof { padding: 3rem 1.5rem !important; }
+    .logos-marquee { margin-bottom: 4rem !important; }
     .logos-top {
-        flex-wrap: wrap !important;
-        gap: 1.5rem !important;
-        margin-bottom: 4rem !important;
+        flex-wrap: nowrap !important;
+        gap: 3rem !important;
+        animation-duration: 15s !important; /* Slightly faster on mobile */
     }
     .logo-item {
-        width: 45% !important;
+        width: max-content !important;
         justify-content: center;
     }
     .floating-img { display: none !important; } /* Hide floating decorative images on mobile as they cause overflow */

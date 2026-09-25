@@ -879,13 +879,28 @@ body {
     overflow: hidden;
 }
 
+.logos-marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 8rem;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
 .logos-top {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    gap: 3rem;
-    margin-bottom: 8rem;
+    gap: 4rem;
+    padding-right: 4rem;
+    animation: scrollLogos 20s linear infinite;
+    width: max-content;
+}
+
+@keyframes scrollLogos {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 .logo-item {

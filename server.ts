@@ -4,9 +4,9 @@ import fs from "fs";
 import jwt from "jsonwebtoken";
 import { GoogleGenAI } from "@google/genai";
 import bcrypt from "bcryptjs";
-import { db, UserRole, LeaveStatus, AssetCategory, AssetStatus, LeaveType, initDb, flushDb } from "./src/server/db";
-import { saasDb, initSaasDb, flushSaasDb } from "./src/server/saas_db";
-import { Asset } from "./src/types";
+import { db, UserRole, LeaveStatus, AssetCategory, AssetStatus, LeaveType, initDb, flushDb } from "./src/server/db.js";
+import { saasDb, initSaasDb, flushSaasDb } from "./src/server/saas_db.js";
+import type { Asset } from "./src/types.js";
 
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;

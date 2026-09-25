@@ -375,6 +375,37 @@ html, body {
     .split-right {
         width: 100% !important;
     }
+
+    /* Switch Section */
+    .switch-section {
+        flex-direction: column !important;
+        padding: 4rem 1.5rem !important;
+        gap: 2rem !important;
+    }
+
+    /* Testimonial Banner */
+    .testimonial-banner {
+        padding: 4rem 1.5rem !important;
+    }
+    .testimonial-content h2 {
+        font-size: 1.8rem !important;
+    }
+
+    /* Final CTA */
+    .final-cta-section {
+        padding: 0 1rem 3rem !important;
+    }
+    .final-cta-card {
+        padding: 4rem 1.5rem !important;
+        border-radius: 16px !important;
+    }
+    .final-cta-title {
+        font-size: 2.5rem !important;
+        letter-spacing: -1px !important;
+    }
+    .gradient-text {
+        font-size: 2.2rem !important;
+    }
 }
 
 

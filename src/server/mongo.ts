@@ -9,7 +9,11 @@ let dbPromise: Promise<MongoClient> | null = null;
 export async function getMongoClient() {
   if (client) return client;
   if (!dbPromise) {
-    dbPromise = MongoClient.connect(uri);
+    console.log("Connecting to MongoDB...", uri.replace(/:[^:]*@/, ':***@'));
+    dbPromise = MongoClient.connect(uri, {
+      serverSelectionTimeoutMS: 5000,
+      connectTimeoutMS: 10000,
+    });
   }
   client = await dbPromise;
   return client;

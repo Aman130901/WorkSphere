@@ -94,6 +94,17 @@ const requireRole = (roles: UserRole[]) => {
 // 1. AUTHENTICATION ENDPOINTS
 // ==================================================
 
+app.get("/api/test-db", async (req: Request, res: Response) => {
+  try {
+    const { getMongoClient } = await import('./src/server/mongo.js');
+    const client = await getMongoClient();
+    await client.db("worksphere").command({ ping: 1 });
+    res.json({ status: "success", message: "Successfully connected to MongoDB" });
+  } catch (error: any) {
+    res.status(500).json({ status: "error", message: error.message || "Failed to connect to MongoDB", uri: process.env.MONGODB_URI ? "Set (hidden)" : "Missing" });
+  }
+});
+
 // Register a new employee (Admin only or default onboarding first time)
 app.post("/api/auth/register", async (req: Request, res: Response) => {
   try {

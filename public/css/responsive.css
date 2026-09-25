@@ -250,6 +250,39 @@ html, body {
     .test-nav-container {
         display: none !important;
     }
+    
+    /* Additional Heading & CTA Fixes */
+    .time-heading, .hiring-heading, .cta-heading {
+        font-size: 2.2rem !important;
+        letter-spacing: -0.5px !important;
+    }
+    .cta-top-split {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 2rem !important;
+    }
+    .cta-left .pill-outline {
+        margin: 0 auto 1.5rem !important;
+        display: inline-block !important;
+    }
+    .cta-right {
+        text-align: center !important;
+        width: 100% !important;
+    }
+    .cta-list {
+        text-align: left !important;
+        display: inline-block !important;
+        margin: 0 auto 2rem !important;
+    }
+    .cta-cards-grid {
+        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+    .cta-image-card {
+        width: 100% !important;
+    }
 }
 
 @media (max-width: 480px) {

@@ -854,15 +854,17 @@
 </script>
 <script>
 (function() {
-    // Handling click on Hiring Features
+    // Handling hover/click on Hiring Features
     var hiringFeatures = document.querySelectorAll('.hiring-feature');
     hiringFeatures.forEach(function(feature) {
-        feature.addEventListener('click', function() {
-            // Remove active from all
+        // Function to make feature active
+        var activateFeature = function() {
             hiringFeatures.forEach(function(f) { f.classList.remove('active'); });
-            // Add active to clicked
             this.classList.add('active');
-        });
+        };
+        // Add event listeners for both mouse enter and click
+        feature.addEventListener('mouseenter', activateFeature);
+        feature.addEventListener('click', activateFeature);
     });
 })();
 </script>

@@ -1346,8 +1346,7 @@ body {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-.hiring-feature.active .feature-bar,
-.hiring-feature:hover .feature-bar {
+.hiring-feature.active .feature-bar {
     height: 2px;
     background-color: #ea503f; /* var(--primary-red) or similar orange/red */
 }

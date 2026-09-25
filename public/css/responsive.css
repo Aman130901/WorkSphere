@@ -155,7 +155,6 @@ html, body {
     .stats-grid { grid-template-columns: 1fr !important; }
     .footer-grid { grid-template-columns: 1fr !important; }
     .floating-cards-container { transform: scale(0.3) !important; margin-bottom: -400px !important; }
-    .logo-item { width: 100% !important; }
 }
 
 /* --- Mobile Slide Menu --- */

@@ -343,6 +343,19 @@ html, body {
         width: 100% !important;
     }
     
+    /* Compare Section Heading Mobile Fix */
+    .compare-section h2 {
+        font-size: 2rem !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        padding: 0 1rem !important;
+    }
+    .compare-subtitle {
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        padding: 0 1rem !important;
+    }
+    
     /* Awards Grid Mobile Fix */
     .awards-grid {
         grid-template-columns: repeat(2, 1fr) !important;

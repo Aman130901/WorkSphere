@@ -194,6 +194,62 @@ html, body {
         width: 100% !important;
         max-width: 380px !important;
     }
+    
+    /* Products Page Mobile Fixes */
+    .benefits-cards {
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+    .b-card-top {
+        height: auto !important;
+        padding: 2rem 1rem !important;
+        flex-direction: column !important;
+    }
+    .b-ui-card, .b-ui-chart {
+        position: relative !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        height: auto !important;
+        margin-bottom: 2rem !important;
+    }
+    .time-feature-split, .hiring-feature-split {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 2rem !important;
+    }
+    .hiring-right {
+        justify-content: center !important;
+    }
+    .hiring-ui-card {
+        position: relative !important;
+        left: 0 !important;
+        top: -2rem !important;
+        margin: 0 auto !important;
+    }
+    .test-carousel {
+        flex-direction: column !important;
+        width: 100% !important;
+        padding: 0 1rem !important;
+    }
+    .test-card {
+        flex: 1 1 auto !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 1.5rem !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+    .test-card.active {
+        transform: none !important;
+    }
+    .t-quote, .active .t-quote {
+        font-size: 1.1rem !important;
+    }
+    .test-nav-container {
+        display: none !important;
+    }
 }
 
 @media (max-width: 480px) {

@@ -95,6 +95,31 @@ html, body {
     }
     .floating-img { display: none !important; } /* Hide floating decorative images on mobile as they cause overflow */
     
+    .btn-get-started {
+        width: 100% !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    .autopilot-pill-container {
+        position: relative !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        width: 100% !important;
+        margin-top: 2rem;
+    }
+    .btn-pill {
+        width: 100% !important;
+        white-space: nowrap !important;
+        font-size: 0.9rem !important;
+        padding: 1rem !important;
+    }
+    
+    .highlight-badge {
+        white-space: nowrap !important;
+        margin-bottom: 0.5rem;
+    }
+    
     /* Feature Split Section Fixes */
     .feature-split {
         flex-direction: column !important;

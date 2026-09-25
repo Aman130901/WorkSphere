@@ -310,6 +310,21 @@ html, body {
     .compare-table {
         min-width: 700px !important;
     }
+    .compare-table th.feature-col,
+    .compare-table td.feature-col {
+        position: sticky !important;
+        left: 0 !important;
+        background: #ffffff !important;
+        z-index: 10 !important;
+        border-right: 1px solid #eaeaea !important;
+    }
+    .compare-table th.feature-col {
+        z-index: 11 !important;
+    }
+    .category-header span:first-child {
+        position: sticky !important;
+        left: 1.5rem !important;
+    }
     
     /* Consider Grid Mobile Fix */
     .consider-grid {

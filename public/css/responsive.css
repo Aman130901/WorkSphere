@@ -54,7 +54,7 @@ html, body {
         order: 3;
     }
 
-    .nav-left { width: auto !important; }
+    .nav-left { width: auto !important; margin-left: 0 !important; }
     .navbar .logo { font-size: 1.5rem; }
 
     /* Hero Sections */

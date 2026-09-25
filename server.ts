@@ -1827,4 +1827,19 @@ async function startServer() {
   });
 }
 
-startServer();
+// Only start the server if we are NOT on Vercel
+if (!process.env.VERCEL) {
+  startServer();
+}
+
+// Ensure DB is initialized for Vercel serverless invocations
+let isDbInitialized = false;
+app.use(async (req, res, next) => {
+  if (process.env.VERCEL && !isDbInitialized) {
+    await Promise.all([initDb(), initSaasDb()]);
+    isDbInitialized = true;
+  }
+  next();
+});
+
+export default app;

@@ -16,13 +16,11 @@ const JWT_SECRET = process.env.JWT_SECRET || "enterprise-hrms-secret-key-2026";
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Ensure DB is initialized for Vercel serverless invocations
-let isDbInitialized = false;
+// Ensure DB is loaded on every request for Vercel to avoid stale state across containers
 app.use(async (req, res, next) => {
-  if (process.env.VERCEL && !isDbInitialized) {
+  if (process.env.VERCEL) {
     try {
       await Promise.all([initDb(), initSaasDb()]);
-      isDbInitialized = true;
     } catch (e) {
       console.error("DB Init Error on Vercel:", e);
     }

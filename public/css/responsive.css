@@ -378,17 +378,21 @@ html, body {
 
     /* Business Hero Section Fix */
     .business-hero {
-        flex-direction: column !important;
+        flex-direction: column-reverse !important;
         padding: 6rem 1.5rem 2rem !important;
-        gap: 2rem !important;
+        gap: 3rem !important;
     }
     .business-hero .hero-visual {
         width: 100% !important;
-        margin-top: 2rem !important;
+        margin-top: 0 !important;
+        margin-bottom: 1rem !important;
     }
     .business-hero .hero-visual img {
         width: 100% !important;
         height: auto !important;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 12px;
     }
     .split-right {
         width: 100% !important;

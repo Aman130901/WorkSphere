@@ -202,7 +202,7 @@ const DEFAULT_SETTINGS: SystemSettings = {
   backups: [],
 };
 
-import { loadState, saveState } from "./mongo";
+import { loadState, saveState } from "./mongo.js";
 
 let dbState: DatabaseSchema | null = null;
 export let isDbDirty = false;

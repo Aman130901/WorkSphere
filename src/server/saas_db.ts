@@ -141,7 +141,7 @@ const INITIAL_SAAS_DB: SaasDatabase = {
   anomalies: []
 };
 
-import { loadState, saveState } from "./mongo";
+import { loadState, saveState } from "./mongo.js";
 
 let saasDbState: SaasDatabase | null = null;
 export let isSaasDbDirty = false;

@@ -176,6 +176,24 @@ html, body {
     .footer-bottom-row { flex-direction: column; text-align: center; gap: 1rem; }
     
     .marquee-container { transform: none !important; }
+    
+    /* Success Stories Fixes */
+    .success-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 1.5rem !important;
+    }
+    .success-header-right {
+        text-align: left !important;
+    }
+    .carousel-track {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .story-card {
+        width: 100% !important;
+        max-width: 380px !important;
+    }
 }
 
 @media (max-width: 480px) {

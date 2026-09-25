@@ -140,8 +140,9 @@ html, body {
     }
     .hiring-content { padding: 2rem !important; }
     .hiring-features-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
     }
     .floating-laptop-card {
         width: 100% !important;

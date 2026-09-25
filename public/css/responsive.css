@@ -22,9 +22,14 @@ html, body {
     /* Typography */
     .hero-content h1, .hero-title { font-size: 2.8rem !important; line-height: 1.1 !important; margin-bottom: 1rem !important; }
     .hero-content p { font-size: 1.1rem !important; margin-bottom: 1.5rem !important; }
-    h2, .section-title { font-size: 2rem !important; }
-    h3 { font-size: 1.5rem !important; }
-    .hero-subtitle, .hero-desc { font-size: 1rem !important; }
+    h2, .section-title, .feature-heading, .social-heading { font-size: 2rem !important; }
+    h3, .feature-title { font-size: 1.5rem !important; }
+    .hero-subtitle, .hero-desc, .card-title { font-size: 1rem !important; }
+    
+    /* Hide br tags inside headings on mobile for better text wrapping */
+    h1 br, h2 br, h3 br, h4 br, .feature-title br, .card-title br, .card-body br, .hiring-title br, .hiring-subtitle br, .hiring-feature p br { 
+        display: none !important; 
+    }
 
     /* Navbar */
     .navbar {
@@ -72,7 +77,49 @@ html, body {
     }
     .card-time-off { left: 0 !important; }
     .card-hiring { right: 0 !important; }
-    .card-onboarding { display: none !important; } /* Hide some decorative cards to reduce clutter */
+    .card-onboarding { display: none !important; }
+
+    /* Social Proof Section Fixes */
+    .social-proof { padding: 3rem 1.5rem !important; }
+    .logos-top {
+        flex-wrap: wrap !important;
+        gap: 1.5rem !important;
+        margin-bottom: 4rem !important;
+    }
+    .logo-item {
+        width: 45% !important;
+        justify-content: center;
+    }
+    .floating-img { display: none !important; } /* Hide floating decorative images on mobile as they cause overflow */
+    
+    /* Feature Split Section Fixes */
+    .feature-split {
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+    .feature-text-content, .feature-image-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: center;
+    }
+    
+    /* Hiring Section Fixes */
+    .hiring-container {
+        flex-direction: column !important;
+    }
+    .hiring-content { padding: 2rem !important; }
+    .hiring-features-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    .floating-laptop-card {
+        width: 100% !important;
+        position: relative !important;
+        transform: none !important;
+        left: 0 !important;
+        top: 0 !important;
+        margin-bottom: 2rem !important;
+    }
 
     /* Grids & Cards */
     .grid, .features-grid, .pricing-grid, .products-grid, .industry-grid, .tools-grid {
@@ -105,6 +152,7 @@ html, body {
     .stats-grid { grid-template-columns: 1fr !important; }
     .footer-grid { grid-template-columns: 1fr !important; }
     .floating-cards-container { transform: scale(0.45); margin-bottom: -250px !important; }
+    .logo-item { width: 100% !important; }
 }
 
 /* --- Mobile Slide Menu --- */

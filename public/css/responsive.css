@@ -376,6 +376,24 @@ html, body {
         width: 100% !important;
     }
 
+    /* Business Hero Section Fix */
+    .business-hero {
+        flex-direction: column !important;
+        padding: 6rem 1.5rem 2rem !important;
+        gap: 2rem !important;
+    }
+    .business-hero .hero-visual {
+        width: 100% !important;
+        margin-top: 2rem !important;
+    }
+    .business-hero .hero-visual img {
+        width: 100% !important;
+        height: auto !important;
+    }
+    .split-right {
+        width: 100% !important;
+    }
+
     /* Switch Section */
     .switch-section {
         flex-direction: column !important;

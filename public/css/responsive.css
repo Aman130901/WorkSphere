@@ -342,9 +342,18 @@ html, body {
     .consider-content {
         width: 100% !important;
     }
+    
+    /* Awards Grid Mobile Fix */
+    .awards-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+    }
 }
 
 @media (max-width: 480px) {
+    .awards-grid {
+        grid-template-columns: 1fr !important;
+    }
     /* Small Mobile */
     .hero-content h1, .hero-title { font-size: 2.2rem !important; }
     .stats-grid { grid-template-columns: 1fr !important; }

@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    WorkSphere — Global Styles
    Animations, 3D Effects, Responsiveness, Smooth Scroll
    ============================================================ */
@@ -144,10 +144,10 @@ html.lenis { height: auto; }
 @media (max-width: 480px)  { .footer-grid { grid-template-columns: 1fr !important; } }
 
 /* ── AWARDS / LOGOS — 4 in one row ───────────────────────── */
-.awards-grid { grid-template-columns: repeat(4, 1fr) !important; }
+.awards-grid { grid-template-columns: repeat(4, 1fr); }
 .logos-top { flex-wrap: nowrap !important; gap: 2rem !important; }
 @media (max-width: 768px) {
-  .awards-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .awards-grid { grid-template-columns: repeat(2, 1fr); }
   .logos-top { flex-wrap: wrap !important; }
 }
 

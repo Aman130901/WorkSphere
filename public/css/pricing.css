@@ -1537,6 +1537,6 @@ body {
 
 /* FIX: 4 awards in one row */
 .awards-grid {
-    grid-template-columns: repeat(4, 1fr) !important;
-    gap: 1.5rem !important;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
 }

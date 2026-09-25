@@ -2,7 +2,6 @@ import express, { Request, Response, NextFunction } from "express";
 import path from "path";
 import fs from "fs";
 import jwt from "jsonwebtoken";
-import { createServer as createViteServer } from "vite";
 import { GoogleGenAI } from "@google/genai";
 import bcrypt from "bcryptjs";
 import { db, UserRole, LeaveStatus, AssetCategory, AssetStatus, LeaveType, initDb, flushDb } from "./src/server/db";
@@ -16,6 +15,20 @@ const JWT_SECRET = process.env.JWT_SECRET || "enterprise-hrms-secret-key-2026";
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Ensure DB is initialized for Vercel serverless invocations
+let isDbInitialized = false;
+app.use(async (req, res, next) => {
+  if (process.env.VERCEL && !isDbInitialized) {
+    try {
+      await Promise.all([initDb(), initSaasDb()]);
+      isDbInitialized = true;
+    } catch (e) {
+      console.error("DB Init Error on Vercel:", e);
+    }
+  }
+  next();
+});
 
 // Mongo Persistence Middleware
 app.use((req, res, next) => {
@@ -1796,6 +1809,7 @@ async function startServer() {
   console.log("Databases initialized.");
 
   if (process.env.NODE_ENV !== "production") {
+    const { createServer: createViteServer } = await import("vite");
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "custom", // Use custom since we want to serve app.html
@@ -1831,15 +1845,5 @@ async function startServer() {
 if (!process.env.VERCEL) {
   startServer();
 }
-
-// Ensure DB is initialized for Vercel serverless invocations
-let isDbInitialized = false;
-app.use(async (req, res, next) => {
-  if (process.env.VERCEL && !isDbInitialized) {
-    await Promise.all([initDb(), initSaasDb()]);
-    isDbInitialized = true;
-  }
-  next();
-});
 
 export default app;

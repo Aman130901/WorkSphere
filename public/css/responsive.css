@@ -378,11 +378,12 @@ html, body {
 
     /* Business Hero Section Fix */
     .business-hero {
-        flex-direction: column-reverse !important;
+        flex-direction: column !important;
         padding: 6rem 1.5rem 2rem !important;
         gap: 3rem !important;
     }
     .business-hero .hero-visual {
+        order: -1 !important;
         width: 100% !important;
         margin-top: 0 !important;
         margin-bottom: 1rem !important;

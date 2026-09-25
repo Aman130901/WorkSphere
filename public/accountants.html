@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkSphere for Admins — Enterprise Control Center</title>
+    <meta name="description" content="The ultimate admin command center. Manage permissions, compliance, backups, security, and full system configuration.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/accountants.css">
+    <style>
+      :root {
+        --adm-bg: #ffffff; --adm-surface: #fcfcfc; --adm-border: rgba(0,0,0,0.08);
+        --adm-accent: #ea503f; --adm-accent2: #7a1505; --adm-text: #0a0a0a;
+        --adm-muted: #57534e; --adm-green: #10b981; --adm-red: #ef4444;
+      }
+      *,*::before,*::after{box-sizing:border-box;}
+      body{background:var(--adm-bg);color:var(--adm-text);font-family:'Outfit','Inter',sans-serif;overflow-x:hidden;}
+      .navbar{background:rgba(255,255,255,0.92)!important;border-bottom:1px solid var(--adm-border)!important;backdrop-filter:blur(20px)!important;}
+      .navbar .logo,.navbar .nav-link,.navbar .sign-in{color:#0a0a0a!important;}
+      .navbar.scrolled{background:rgba(255,255,255,0.99)!important;}
+
+      /* HERO */
+      .adm-hero{min-height:100vh;background:var(--adm-bg);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:6rem 2rem 4rem;text-align:center;}
+      .adm-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(234,80,63,0.2) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(122,21,5,0.15) 0%,transparent 60%);pointer-events:none;}
+      .grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,black 40%,transparent 80%);}
+      .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(234,80,63,.15);border:1px solid rgba(234,80,63,.3);color:#ea503f;font-size:.72rem;font-weight:700;padding:.4rem 1rem;border-radius:999px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2rem;animation:fadeInDown .8s ease both;}
+      .hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#ea503f;animation:blink2 1.5s ease-in-out infinite;}
+      @keyframes fadeInDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+      @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+      @keyframes blink2{0%,100%{box-shadow:0 0 0 0 rgba(234,80,63,.5)}50%{box-shadow:0 0 0 8px rgba(234,80,63,0)}}
+      @keyframes floatACard{0%,100%{transform:perspective(600px) rotateY(-8deg) rotateX(3deg) translateY(0)}50%{transform:perspective(600px) rotateY(-6deg) rotateX(1deg) translateY(-16px)}}
+      @keyframes floatB{0%,100%{transform:translateY(0) rotate(2deg)}50%{transform:translateY(-12px) rotate(-1deg)}}
+      @keyframes orbitSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+      @keyframes glowPulse{0%,100%{box-shadow:0 0 20px rgba(234,80,63,.3)}50%{box-shadow:0 0 60px rgba(234,80,63,.7),0 0 100px rgba(234,80,63,.3)}}
+      @keyframes scan{0%{top:-100%}100%{top:200%}}
+      .adm-title{font-size:clamp(2.5rem,7vw,5.5rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:1.5rem;animation:fadeInUp .9s ease .2s both;}
+      .grad-word{background:linear-gradient(135deg,#ea503f 0%,#ea503f 40%,#ea503f 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+      .adm-desc{font-size:clamp(1rem,2vw,1.25rem);color:var(--adm-muted);max-width:640px;margin:0 auto 2.5rem;line-height:1.7;animation:fadeInUp .9s ease .4s both;}
+      .adm-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeInUp .9s ease .6s both;}
+      .btn-adm{background:linear-gradient(135deg,#ea503f,#7a1505);color:#fff;padding:.85rem 2rem;border-radius:10px;font-weight:700;font-size:.95rem;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(234,80,63,.4);}
+      .btn-adm:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(234,80,63,.5);}
+      .btn-ghost{background:rgba(0,0,0,.03);color:#0a0a0a;padding:.85rem 2rem;border-radius:10px;font-weight:600;font-size:.95rem;border:1px solid rgba(0,0,0,.12);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s;}
+      .btn-ghost:hover{background:rgba(0,0,0,.06);border-color:rgba(0,0,0,.2);transform:translateY(-2px);}
+
+      /* 3D CARD */
+      .hero-3d-wrapper{position:absolute;right:5%;top:50%;transform:translateY(-50%);width:360px;display:none;}
+      @media(min-width:1200px){.hero-3d-wrapper{display:block;}}
+      .dash-card-3d{background:rgba(255,255,255,.9);border:1px solid rgba(234,80,63,.3);border-radius:16px;padding:1.2rem;animation:floatACard 7s ease-in-out infinite;box-shadow:0 25px 80px rgba(0,0,0,.5),0 0 60px rgba(234,80,63,.1);position:relative;overflow:hidden;}
+      .scan-line{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(234,80,63,.6),transparent);animation:scan 3s linear infinite;pointer-events:none;}
+      .card-hdr{display:flex;align-items:center;gap:.5rem;margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid rgba(0,0,0,.08);font-size:.72rem;color:var(--adm-muted);font-weight:600;text-transform:uppercase;}
+      .live-dot{width:8px;height:8px;border-radius:50%;background:var(--adm-green);animation:blink2 2s ease-in-out infinite;}
+      .mini-row{display:flex;gap:.6rem;margin-bottom:.6rem;}
+      .mini-box{flex:1;background:rgba(0,0,0,.04);border-radius:8px;padding:.6rem;border:1px solid rgba(0,0,0,.05);}
+      .mini-lbl{font-size:.58rem;color:var(--adm-muted);text-transform:uppercase;margin-bottom:.15rem;}
+      .mini-val{font-size:1rem;font-weight:700;color:var(--adm-text);}
+      .mini-val.g{color:var(--adm-green);}.mini-val.o{color:var(--adm-accent);}.mini-val.p{color:#ea503f;}
+      .act-row{display:flex;align-items:center;gap:.5rem;padding:.35rem 0;border-bottom:1px solid rgba(0,0,0,.04);font-size:.68rem;color:var(--adm-muted);}
+      .act-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+      .float-badge{position:absolute;bottom:-28px;left:-30px;background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.3);border-radius:10px;padding:.5rem .9rem;font-size:.68rem;font-weight:700;color:var(--adm-green);animation:floatB 5s ease-in-out infinite;white-space:nowrap;}
+
+      /* STATS BAR */
+      .stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--adm-border);border-top:1px solid var(--adm-border);border-bottom:1px solid var(--adm-border);}
+      .stat-cell{background:var(--adm-bg);padding:2rem;text-align:center;position:relative;overflow:hidden;transition:background .3s;}
+      .stat-cell:hover{background:rgba(234,80,63,.05);}
+      .stat-cell::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--adm-accent2),transparent);transform:scaleX(0);transition:transform .4s;}
+      .stat-cell:hover::after{transform:scaleX(1);}
+      .big-num{font-size:2.5rem;font-weight:800;color:var(--adm-text);display:block;}
+      .stat-lbl{font-size:.78rem;color:var(--adm-muted);margin-top:.25rem;}
+      @media(max-width:768px){.stats-bar{grid-template-columns:repeat(2,1fr);}}
+      @media(max-width:480px){.stats-bar{grid-template-columns:1fr;}}
+
+      /* SECTIONS */
+      .eyebrow{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--adm-accent2);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;}
+      .eyebrow::before{content:'';display:inline-block;width:20px;height:2px;background:var(--adm-accent2);}
+      .eyebrow-ctr{justify-content:center;}
+      .sec-title{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-bottom:1.2rem;color:var(--adm-text);}
+      .sec-desc{font-size:1.05rem;color:var(--adm-muted);max-width:600px;line-height:1.7;}
+
+      /* FEATURES GRID */
+      .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--adm-border);border:1px solid var(--adm-border);border-radius:20px;overflow:hidden;margin-top:4rem;}
+      @media(max-width:900px){.feat-grid{grid-template-columns:repeat(2,1fr);}}
+      @media(max-width:560px){.feat-grid{grid-template-columns:1fr;}}
+      .feat-cell{background:var(--adm-surface);padding:2rem;position:relative;overflow:hidden;transition:background .3s,transform .3s;cursor:default;}
+      .feat-cell:hover{background:rgba(234,80,63,.08);transform:scale(1.01);}
+      .feat-cell::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(234,80,63,.5),transparent);opacity:0;transition:opacity .3s;}
+      .feat-cell:hover::before{opacity:1;}
+      .feat-icon{width:44px;height:44px;border-radius:10px;background:rgba(234,80,63,.15);border:1px solid rgba(234,80,63,.25);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.3rem;transition:transform .3s,box-shadow .3s;}
+      .feat-cell:hover .feat-icon{transform:translateY(-4px) rotate(5deg);box-shadow:0 8px 20px rgba(234,80,63,.3);}
+      .feat-icon.o{background:rgba(122,21,5,.15);border-color:rgba(122,21,5,.25);}
+      .feat-icon.g{background:rgba(16,185,129,.15);border-color:rgba(16,185,129,.25);}
+      .feat-icon.r{background:rgba(239,68,68,.15);border-color:rgba(239,68,68,.25);}
+      .feat-icon.c{background:rgba(6,182,212,.15);border-color:rgba(6,182,212,.25);}
+      .feat-icon.y{background:rgba(250,204,21,.15);border-color:rgba(250,204,21,.25);}
+      .feat-cell h3{font-size:1rem;font-weight:700;color:var(--adm-text);margin-bottom:.5rem;}
+      .feat-cell p{font-size:.85rem;color:var(--adm-muted);line-height:1.6;}
+      .ftag{display:inline-block;margin-top:.75rem;padding:.2rem .6rem;border-radius:4px;font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;background:rgba(234,80,63,.12);color:#ea503f;}
+      .ftag.new{background:rgba(16,185,129,.12);color:#10b981;}
+      .ftag.beta{background:rgba(122,21,5,.12);color:#fdba74;}
+
+      /* ORBIT */
+      .orbit-sec{padding:6rem 5%;display:flex;gap:4rem;align-items:center;flex-wrap:wrap;background:linear-gradient(180deg,var(--adm-bg) 0%,rgba(255,255,255,.5) 50%,var(--adm-bg) 100%);position:relative;overflow:hidden;}
+      .orbit-visual{position:relative;width:300px;height:300px;flex-shrink:0;margin:0 auto;}
+      .orbit-core{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#ea503f,#7a1505);display:flex;align-items:center;justify-content:center;font-size:2rem;animation:glowPulse 3s ease-in-out infinite;}
+      .ring{position:absolute;top:50%;left:50%;border-radius:50%;border:1px solid rgba(234,80,63,.2);transform:translate(-50%,-50%);}
+      .r1{width:170px;height:170px;animation:orbitSpin 8s linear infinite;}
+      .r2{width:240px;height:240px;animation:orbitSpin 14s linear infinite reverse;}
+      .r3{width:300px;height:300px;animation:orbitSpin 20s linear infinite;}
+      .rdot{position:absolute;width:10px;height:10px;border-radius:50%;top:50%;left:-5px;margin-top:-5px;}
+      .rdot.a{background:#ea503f;animation:orbitSpin 8s linear infinite;transform-origin:85px 5px;}
+      .rdot.b{background:var(--adm-accent);animation:orbitSpin 14s linear infinite reverse;transform-origin:120px 5px;}
+      .rdot.c2{background:var(--adm-green);animation:orbitSpin 20s linear infinite;transform-origin:150px 5px;}
+
+      /* STEPS */
+      .steps-sec{padding:6rem 5%;background:var(--adm-surface);}
+      .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:4rem;}
+      .steps-grid::after{content:'';position:absolute;top:30px;left:12.5%;right:12.5%;height:1px;background:linear-gradient(90deg,transparent,rgba(234,80,63,.4),rgba(122,21,5,.4),transparent);}
+      .step{text-align:center;padding:0 1rem;}
+      .step-num{width:60px;height:60px;border-radius:50%;background:var(--adm-bg);border:1px solid rgba(234,80,63,.4);display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:800;color:#ea503f;margin:0 auto 1.5rem;position:relative;z-index:1;transition:all .3s;}
+      .step:hover .step-num{background:rgba(234,80,63,.2);border-color:#ea503f;box-shadow:0 0 30px rgba(234,80,63,.4);transform:scale(1.1);}
+      .step h3{font-size:.95rem;font-weight:700;color:var(--adm-text);margin-bottom:.5rem;}
+      .step p{font-size:.8rem;color:var(--adm-muted);line-height:1.6;}
+      @media(max-width:768px){.steps-grid{grid-template-columns:repeat(2,1fr);gap:3rem;}.steps-grid::after{display:none;}}
+      @media(max-width:480px){.steps-grid{grid-template-columns:1fr;}}
+
+      /* TERMINAL */
+      .term-sec{padding:6rem 5%;background:var(--adm-bg);display:flex;gap:4rem;align-items:center;flex-wrap:wrap;}
+      .term-win{flex:1;min-width:280px;max-width:500px;background:#fcfcfc;border:1px solid rgba(0,0,0,.08);border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);animation:floatACard 8s ease-in-out infinite;}
+      .term-hdr{background:#f3f4f6;padding:.75rem 1rem;display:flex;align-items:center;gap:.5rem;border-bottom:1px solid rgba(0,0,0,.06);}
+      .tdot{width:12px;height:12px;border-radius:50%;}
+      .tlbl{flex:1;text-align:center;font-size:.68rem;color:#888;}
+      .term-body{padding:1.2rem;font-family:'JetBrains Mono','Courier New',monospace;font-size:.72rem;line-height:2;}
+      .trow{display:flex;gap:.4rem;}
+      .tprompt{color:#10b981;}.tcmd{color:#0a0a0a;}.tout{color:#64748b;padding-left:1.2rem;}.tok{color:#10b981;padding-left:1.2rem;}.twarn{color:#fbbf24;padding-left:1.2rem;}
+      .tcursor{display:inline-block;width:8px;height:14px;background:#ea503f;animation:blink3 1s step-end infinite;vertical-align:middle;}
+      @keyframes blink3{50%{opacity:0;}}
+      .term-content{flex:1;min-width:280px;}
+
+      /* PERMS TABLE */
+      .perm-sec{padding:6rem 5%;background:var(--adm-surface);}
+      .perm-table{width:100%;border-collapse:collapse;margin-top:3rem;}
+      .perm-table thead tr{border-bottom:1px solid var(--adm-border);}
+      .perm-table th{padding:1rem 1.5rem;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--adm-muted);text-align:left;}
+      .perm-table th:first-child{color:var(--adm-text);}
+      .perm-table td{padding:.9rem 1.5rem;border-bottom:1px solid rgba(0,0,0,.04);font-size:.85rem;color:var(--adm-muted);}
+      .perm-table td:first-child{color:var(--adm-text);font-weight:600;}
+      .perm-table tr{transition:background .2s;}
+      .perm-table tr:hover{background:rgba(234,80,63,.05);}
+      .pchk{color:var(--adm-green);font-size:1.1rem;}.px{color:var(--adm-red);}.ppart{color:var(--adm-accent);font-size:.8rem;font-weight:600;}
+      .rbadge{display:inline-block;padding:.2rem .6rem;border-radius:4px;font-size:.63rem;font-weight:700;text-transform:uppercase;}
+      .rb-admin{background:rgba(234,80,63,.15);color:#ea503f;}.rb-mgr{background:rgba(122,21,5,.15);color:#fdba74;}.rb-emp{background:rgba(100,116,139,.15);color:#94a3b8;}
+      @media(max-width:768px){.perm-table{display:block;overflow-x:auto;}}
+
+      /* CTA */
+      .cta-sec{padding:8rem 5%;text-align:center;background:linear-gradient(135deg,rgba(234,80,63,.1) 0%,rgba(122,21,5,.05) 100%);border-top:1px solid var(--adm-border);position:relative;overflow:hidden;}
+      .cta-sec::before{content:'';position:absolute;top:-50%;left:25%;width:50%;height:200%;background:radial-gradient(ellipse,rgba(234,80,63,.15) 0%,transparent 70%);pointer-events:none;}
+      .cta-title{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:1rem;color:var(--adm-text);}
+      .cta-sub{font-size:1.05rem;color:var(--adm-muted);margin-bottom:2.5rem;max-width:500px;margin-left:auto;margin-right:auto;}
+
+      /* CHIPS */
+      .chip{background:rgba(234,80,63,.12);border:1px solid rgba(234,80,63,.25);color:#ea503f;padding:.4rem .9rem;border-radius:6px;font-size:.78rem;font-weight:600;}
+      .chip.o{background:rgba(122,21,5,.12);border-color:rgba(122,21,5,.25);color:#fdba74;}
+      .chip.g{background:rgba(16,185,129,.12);border-color:rgba(16,185,129,.25);color:#10b981;}
+      .chip.c{background:rgba(6,182,212,.12);border-color:rgba(6,182,212,.25);color:#67e8f9;}
+      .chip.sl{background:rgba(100,116,139,.12);border-color:rgba(100,116,139,.25);color:#94a3b8;}
+    </style>
+</head>
+<body>
+    <!-- NAVBAR PLACEHOLDER - will be replaced by script -->
+    <div id="navbar-slot"></div>
+
+    <!-- HERO -->
+    <section class="adm-hero">
+      <div class="grid-bg"></div>
+      <div style="position:absolute;top:15%;left:8%;width:260px;height:260px;background:radial-gradient(circle,rgba(234,80,63,.2),transparent 70%);border-radius:50%;animation:morphBlob 12s ease-in-out infinite;pointer-events:none;" class="parallax-float"></div>
+      <div style="position:absolute;bottom:20%;right:10%;width:180px;height:180px;background:radial-gradient(circle,rgba(122,21,5,.15),transparent 70%);border-radius:50%;animation:floatY 8s ease-in-out 1s infinite;pointer-events:none;" class="parallax-float"></div>
+      <div style="position:relative;z-index:1;max-width:760px;">
+        <div class="hero-badge">⚡ Admin Control Center</div>
+        <h1 class="adm-title">Total control.<br><span class="grad-word">Zero compromise.</span></h1>
+        <p class="adm-desc">One unified command center to manage permissions, compliance, security, and every system configuration across your entire organization.</p>
+        <div class="adm-cta">
+          <a href="http://localhost:3000/" class="btn-adm">🚀 Access Admin Panel</a>
+          <a href="pricing.html" class="btn-ghost">📋 View Plans</a>
+        </div>
+      </div>
+      <div class="hero-3d-wrapper">
+        <div style="position:relative;">
+          <div class="dash-card-3d">
+            <div class="scan-line"></div>
+            <div class="card-hdr"><div class="live-dot"></div>Admin Dashboard — Live</div>
+            <div class="mini-row">
+              <div class="mini-box"><div class="mini-lbl">Total Users</div><div class="mini-val">1,284</div></div>
+              <div class="mini-box"><div class="mini-lbl">Active Sessions</div><div class="mini-val g">47</div></div>
+              <div class="mini-box"><div class="mini-lbl">Alerts</div><div class="mini-val o">3</div></div>
+            </div>
+            <div class="mini-row">
+              <div class="mini-box"><div class="mini-lbl">Compliance</div><div class="mini-val g">100%</div></div>
+              <div class="mini-box"><div class="mini-lbl">Permissions</div><div class="mini-val p">128</div></div>
+            </div>
+            <div class="act-row"><div class="act-dot" style="background:#10b981;"></div>Leave approved — Aditya Sonkar</div>
+            <div class="act-row"><div class="act-dot" style="background:#fbbf24;"></div>Security audit scheduled</div>
+            <div class="act-row"><div class="act-dot" style="background:#ea503f;"></div>Role updated — Finance Team</div>
+            <div class="act-row"><div class="act-dot" style="background:#ef4444;"></div>Failed login attempt blocked</div>
+          </div>
+          <div class="float-badge">✅ Compliance Active — All Systems Go</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar animate-on-scroll fade-up">
+      <div class="stat-cell"><span class="big-num counter">99.9</span><div class="stat-lbl">% System Uptime</div></div>
+      <div class="stat-cell"><span class="big-num counter">128</span><div class="stat-lbl">Custom Permission Rules</div></div>
+      <div class="stat-cell"><span class="big-num counter">50</span><div class="stat-lbl">Integrations Supported</div></div>
+      <div class="stat-cell"><span class="big-num counter">24</span><div class="stat-lbl">/ 7 Live Support</div></div>
+    </div>
+
+    <!-- FEATURES GRID -->
+    <section style="padding:6rem 5%;background:var(--adm-bg);">
+      <div style="max-width:1200px;margin:0 auto;">
+        <div class="animate-on-scroll fade-up">
+          <div class="eyebrow">Admin Capabilities</div>
+          <h2 class="sec-title">Built exclusively<br>for administrators</h2>
+          <p class="sec-desc">Every tool to run a tight ship — from granular permission control to enterprise-grade security configurations.</p>
+        </div>
+        <div class="feat-grid animate-on-scroll fade-up delay-200">
+          <div class="feat-cell"><div class="feat-icon">🛡️</div><h3>Role-Based Access Control</h3><p>Define granular permissions per department, team, or individual. Create custom roles with surgical precision.</p><span class="ftag">Core</span></div>
+          <div class="feat-cell"><div class="feat-icon o">📊</div><h3>Advanced Analytics & Reports</h3><p>Deep-dive dashboards with export capabilities. Track KPIs, headcount trends, compliance scores, and more.</p><span class="ftag new">New</span></div>
+          <div class="feat-cell"><div class="feat-icon g">🔐</div><h3>Security & Authentication</h3><p>SSO, MFA, session controls, IP whitelisting, and complete audit logs for every admin action.</p><span class="ftag">Core</span></div>
+          <div class="feat-cell"><div class="feat-icon r">🗄️</div><h3>Database Backup & Recovery</h3><p>Automated daily backups with point-in-time recovery. Full data sovereignty and encryption at rest.</p><span class="ftag new">New</span></div>
+          <div class="feat-cell"><div class="feat-icon c">🏢</div><h3>Multi-Entity Management</h3><p>Manage multiple company entities, subsidiaries, and branch offices from a single admin account.</p><span class="ftag beta">Beta</span></div>
+          <div class="feat-cell"><div class="feat-icon y">⚙️</div><h3>System Configuration</h3><p>Configure attendance policies, grace periods, leave accruals, holiday calendars, and payroll cycles globally.</p><span class="ftag">Core</span></div>
+          <div class="feat-cell"><div class="feat-icon">🔔</div><h3>Global Notification Rules</h3><p>Set automated triggers for alerts — overdue approvals, compliance violations, shift conflicts, and policy breaches.</p><span class="ftag">Core</span></div>
+          <div class="feat-cell"><div class="feat-icon o">🔗</div><h3>API & Integrations Hub</h3><p>Connect to Slack, MS Teams, QuickBooks, Xero, and 50+ third-party tools via REST API and webhooks.</p><span class="ftag new">New</span></div>
+          <div class="feat-cell"><div class="feat-icon g">✅</div><h3>Compliance Automation</h3><p>Stay ahead of labor laws with auto-updated compliance rules, statutory holiday syncing, and legal document tracking.</p><span class="ftag">Core</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORBIT / SECURITY SECTION -->
+    <section class="orbit-sec animate-on-scroll fade-up">
+      <div class="orbit-visual">
+        <div class="ring r1"><div class="rdot a"></div></div>
+        <div class="ring r2"><div class="rdot b"></div></div>
+        <div class="ring r3"><div class="rdot c2"></div></div>
+        <div class="orbit-core">🛡️</div>
+      </div>
+      <div style="flex:1;min-width:280px;">
+        <div class="eyebrow">Security First</div>
+        <h2 class="sec-title">Enterprise-grade<br>security built in</h2>
+        <p class="sec-desc" style="margin-bottom:2rem;">Zero-trust architecture, end-to-end encryption, and full audit trails come standard — because security is non-negotiable.</p>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:.75rem;">
+          <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#94a3b8;"><span style="color:#10b981;font-weight:700;">✓</span> SOC 2 Type II Compliant</li>
+          <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#94a3b8;"><span style="color:#10b981;font-weight:700;">✓</span> End-to-End Encryption (AES-256)</li>
+          <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#94a3b8;"><span style="color:#10b981;font-weight:700;">✓</span> GDPR & DPDP Act Ready</li>
+          <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#94a3b8;"><span style="color:#10b981;font-weight:700;">✓</span> Real-time Threat Detection</li>
+          <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#94a3b8;"><span style="color:#10b981;font-weight:700;">✓</span> Immutable Audit Logs</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PERMISSIONS TABLE -->
+    <section class="perm-sec animate-on-scroll fade-up">
+      <div style="max-width:1200px;margin:0 auto;">
+        <div class="eyebrow">Access Control</div>
+        <h2 class="sec-title">Who can do what</h2>
+        <p class="sec-desc">Clear role-based permissions so every team member has exactly the right access — nothing more, nothing less.</p>
+        <table class="perm-table">
+          <thead><tr><th>Feature / Action</th><th><span class="rbadge rb-admin">Admin</span></th><th><span class="rbadge rb-mgr">Manager</span></th><th><span class="rbadge rb-emp">Employee</span></th></tr></thead>
+          <tbody>
+            <tr><td>Approve / Reject leave requests</td><td><span class="pchk">✓</span></td><td><span class="pchk">✓</span></td><td><span class="px">✕</span></td></tr>
+            <tr><td>View all employee records</td><td><span class="pchk">✓</span></td><td><span class="ppart">Team only</span></td><td><span class="px">✕</span></td></tr>
+            <tr><td>Edit roles &amp; permissions</td><td><span class="pchk">✓</span></td><td><span class="px">✕</span></td><td><span class="px">✕</span></td></tr>
+            <tr><td>Configure system policies</td><td><span class="pchk">✓</span></td><td><span class="px">✕</span></td><td><span class="px">✕</span></td></tr>
+            <tr><td>View analytics dashboard</td><td><span class="pchk">✓</span></td><td><span class="ppart">Limited</span></td><td><span class="px">✕</span></td></tr>
+            <tr><td>Manage integrations &amp; API keys</td><td><span class="pchk">✓</span></td><td><span class="px">✕</span></td><td><span class="px">✕</span></td></tr>
+            <tr><td>Trigger database backups</td><td><span class="pchk">✓</span></td><td><span class="px">✕</span></td><td><span class="px">✕</span></td></tr>
+            <tr><td>View shift &amp; attendance logs</td><td><span class="pchk">✓</span></td><td><span class="pchk">✓</span></td><td><span class="ppart">Own only</span></td></tr>
+            <tr><td>Submit leave / expense request</td><td><span class="pchk">✓</span></td><td><span class="pchk">✓</span></td><td><span class="pchk">✓</span></td></tr>
+            <tr><td>View payslips</td><td><span class="pchk">✓</span></td><td><span class="pchk">✓</span></td><td><span class="ppart">Own only</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- WORKFLOW STEPS -->
+    <section class="steps-sec animate-on-scroll fade-up">
+      <div style="max-width:1200px;margin:0 auto;text-align:center;">
+        <div class="eyebrow eyebrow-ctr">Getting Started</div>
+        <h2 class="sec-title">Up and running in minutes</h2>
+        <p class="sec-desc" style="margin:0 auto 0;">No IT team required. Set up your admin workspace in four simple steps.</p>
+        <div class="steps-grid">
+          <div class="step animate-on-scroll fade-up delay-100"><div class="step-num">1</div><h3>Create Your Account</h3><p>Sign up and verify your organization domain in under 2 minutes.</p></div>
+          <div class="step animate-on-scroll fade-up delay-200"><div class="step-num">2</div><h3>Import Your Team</h3><p>Bulk-import employees via CSV or connect your existing HR database.</p></div>
+          <div class="step animate-on-scroll fade-up delay-300"><div class="step-num">3</div><h3>Set Permissions</h3><p>Assign roles, configure access levels, and set department hierarchies.</p></div>
+          <div class="step animate-on-scroll fade-up delay-400"><div class="step-num">4</div><h3>Go Live</h3><p>Activate your workspace. Employees get instant invite emails to join.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TERMINAL MOCKUP -->
+    <section class="term-sec animate-on-scroll fade-up">
+      <div class="term-win">
+        <div class="term-hdr"><div class="tdot" style="background:#ff5f57;"></div><div class="tdot" style="background:#febc2e;"></div><div class="tdot" style="background:#28c840;"></div><span class="tlbl">WorkSphere Admin CLI — v3.2.1</span></div>
+        <div class="term-body">
+          <div class="trow"><span class="tprompt">admin@ws ►</span><span class="tcmd"> ws audit --full</span></div>
+          <div class="tout">Scanning 1,284 user records...</div>
+          <div class="tok">✓ All records compliant</div>
+          <div class="tout">Checking permission matrix...</div>
+          <div class="tok">✓ 128 roles verified</div>
+          <div class="trow" style="margin-top:.4rem;"><span class="tprompt">admin@ws ►</span><span class="tcmd"> ws backup --trigger</span></div>
+          <div class="tout">Initiating encrypted backup...</div>
+          <div class="tok">✓ Backup complete — 2.4 GB secured</div>
+          <div class="trow" style="margin-top:.4rem;"><span class="tprompt">admin@ws ►</span><span class="tcmd"> ws alerts --list</span></div>
+          <div class="twarn">⚠ 3 pending leave requests</div>
+          <div class="twarn">⚠ Security audit due in 2 days</div>
+          <div class="trow" style="margin-top:.4rem;"><span class="tprompt">admin@ws ►</span><span class="tcmd"> <span class="tcursor"></span></span></div>
+        </div>
+      </div>
+      <div class="term-content">
+        <div class="eyebrow">Developer-Ready</div>
+        <h2 class="sec-title">Powerful API<br>for deep integration</h2>
+        <p class="sec-desc" style="margin-bottom:2rem;">Fully documented REST API, webhooks, and CLI tools for automation-heavy teams and DevOps workflows.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:.75rem;">
+          <span class="chip">REST API</span>
+          <span class="chip o">Webhooks</span>
+          <span class="chip g">CLI Tools</span>
+          <span class="chip c">SDKs</span>
+          <span class="chip sl">OpenAPI 3.0</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-sec animate-on-scroll scale-up">
+      <div style="position:relative;z-index:1;">
+        <div class="hero-badge" style="margin-bottom:1.5rem;">✨ Start free — no credit card needed</div>
+        <h2 class="cta-title">Ready to take full control?</h2>
+        <p class="cta-sub">Join thousands of admins who manage their entire workforce from a single, powerful dashboard.</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <a href="http://localhost:3000/" class="btn-adm" style="font-size:1rem;padding:1rem 2.5rem;">🚀 Create Admin Account</a>
+          <a href="pricing.html" class="btn-ghost" style="font-size:1rem;padding:1rem 2.5rem;">📋 Compare Plans</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER PLACEHOLDER -->
+    <div id="footer-slot"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-slide-menu" id="mobileMenu" style="background:#0f172a;color:#0a0a0a;">
+      <button class="close-btn" id="mobileMenuClose" style="color:#0a0a0a;">&#x2715;</button>
+      <a href="index.html" style="color:#0a0a0a;border-color:#1e293b;">Home</a>
+      <a href="products.html" style="color:#0a0a0a;border-color:#1e293b;">Features</a>
+      <a href="industries.html" style="color:#0a0a0a;border-color:#1e293b;">Solutions</a>
+      <a href="accountants.html" style="color:#ea503f;border-color:#1e293b;">For Admins</a>
+      <a href="resources.html" style="color:#0a0a0a;border-color:#1e293b;">Documentation</a>
+      <a href="pricing.html" style="color:#0a0a0a;border-color:#1e293b;">Plans &amp; Pricing</a>
+      <hr style="margin:1rem 0;border:none;border-top:1px solid #1e293b;">
+      <a href="http://localhost:3000/" style="color:#ea503f;font-weight:700;border-color:#1e293b;">Sign In</a>
+      <a href="http://localhost:3000/" class="btn-adm" style="margin-top:1rem;text-align:center;display:block;padding:.8rem;border-radius:8px;text-decoration:none;">Create free account</a>
+    </div>
+    <script>
+    // Inject nav and footer from index.html
+    fetch('index.html').then(r=>r.text()).then(html=>{
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html,'text/html');
+      const nav = doc.querySelector('nav.navbar');
+      const footer = doc.querySelector('footer');
+      if(nav) document.getElementById('navbar-slot').replaceWith(nav);
+      if(footer) document.getElementById('footer-slot').replaceWith(footer);
+    });
+    (function(){
+      var btn=document.getElementById("hamburger-btn"),menu=document.getElementById("mobileMenu"),overlay=document.getElementById("mobileOverlay"),closeBtn=document.getElementById("mobileMenuClose");
+      function openM(){menu.classList.add("open");overlay.classList.add("open");document.body.style.overflow="hidden";}
+      function closeM(){menu.classList.remove("open");overlay.classList.remove("open");document.body.style.overflow="";}
+      document.addEventListener('click',function(e){var b=document.getElementById('hamburger-btn');if(b&&e.target===b||b&&b.contains(e.target))openM();});
+      if(closeBtn)closeBtn.addEventListener("click",closeM);if(overlay)overlay.addEventListener("click",closeM);
+    })();
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

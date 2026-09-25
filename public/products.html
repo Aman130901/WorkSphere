@@ -1,0 +1,869 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkSphere - Enterprise HRMS & Asset Management</title>
+    <!-- Google Fonts for modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/products.css?v=9">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/animations.css?v=8">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/global.css">
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Open menu" style="display:none;background:none;border:none;cursor:pointer;padding:0.5rem;z-index:999;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div class="nav-left">
+            <a href="index.html" class="logo">WorkSphere</a>
+            <div class="nav-links">
+                <div class="nav-item has-dropdown">
+                    <a href="products.html" class="nav-link" id="nav-products-index">Features <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                    <div class="mega-menu">
+                        <div class="mega-col">
+                            <p class="mega-eyebrow">WHAT WE OFFER</p>
+                            <a href="http://localhost:3000/" class="mega-link">
+                                <strong>Asset Auditing</strong>
+                                <span>Central inventory register and corporate lifecycle</span>
+                            </a>
+                            <a href="http://localhost:3000/" class="mega-link">
+                                <strong>Leave Management</strong>
+                                <span>Calendar-driven requests and balance logs</span>
+                            </a>
+                            <a href="http://localhost:3000/" class="mega-link">
+                                <strong>Shift & attendance tracking</strong>
+                                <span>Interactive clocking and break intervals</span>
+                            </a>
+                            <a href="http://localhost:3000/" class="mega-link">
+                                <strong>Real-Time Notifications</strong>
+                                <span>Live polling alerts and smart triggers</span>
+                            </a>
+                            <a href="http://localhost:3000/" class="mega-link">
+                                <strong>AI HR Copilot</strong>
+                                <span>Intelligent context-grounded AI companion</span>
+                            </a>
+                            <a href="products.html" class="mega-link-all">
+                                <span>⊞</span> All products
+                            </a>
+                        </div>
+                        <div class="mega-col">
+                            <p class="mega-eyebrow">TOP TOOLS & FEATURES</p>
+                            <a href="http://localhost:3000/" class="mega-simple-link">shift tracking coverage</a>
+                            <a href="http://localhost:3000/" class="mega-simple-link">Offer live polling plans</a>
+                            <a href="http://localhost:3000/" class="mega-simple-link">Hire & onboard employees</a>
+                            <a href="http://localhost:3000/" class="mega-simple-link">E-file 1099s</a>
+                            <a href="http://localhost:3000/" class="mega-simple-link">Manage global teams</a>
+                        </div>
+                        <div class="mega-col mega-card-col">
+                            <div class="mega-card">
+                                <img src="https://picsum.photos/seed/gusto10/400/200" alt="Promo">
+                                <p class="mega-card-title">New brand. Same heart.</p>
+                                <div class="mega-card-divider"></div>
+                                <a href="http://localhost:3000/" class="mega-card-link">How WorkSphere compares</a>
+                                <a href="http://localhost:3000/" class="mega-card-link">Apps & integrations</a>
+                                <a href="http://localhost:3000/" class="mega-card-link">Changing asset management providers</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+<div class="nav-item has-dropdown">
+    <a href="business-types.html" class="nav-link">Solutions <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+    <div class="mega-menu">
+        <div class="mega-col">
+            <p class="mega-eyebrow">BY SIZE</p>
+            <a href="http://localhost:3000/" class="mega-link">
+                <strong>enterprise</strong>
+                <span>Run asset management, file reports, stay compliant and so much more</span>
+            </a>
+            <a href="http://localhost:3000/" class="mega-link">
+                <strong>Medium-sized business</strong>
+                <span>Grow, expand, and add leave management without the admin</span>
+            </a>
+            <a href="http://localhost:3000/" class="mega-link">
+                <strong>Larger business</strong>
+                <span>More people, more states, more complexity - one platform</span>
+            </a>
+            <a href="http://localhost:3000/" class="mega-link">
+                <strong>One employee: Solo</strong>
+                <span>track yourself and field agents compliantly</span>
+            </a>
+            <a href="http://localhost:3000/" class="mega-link">
+                <strong>Contractor only</strong>
+                <span>Onboard and pay 1099 field agents</span>
+            </a>
+            <a href="#" class="mega-link-all">
+                <span>📁</span> All Business solutions
+            </a>
+        </div>
+        <div class="mega-col">
+            <p class="mega-eyebrow">BY INDUSTRY</p>
+            <a href="http://localhost:3000/" class="mega-link"><strong>Technology</strong></a>
+            <a href="http://localhost:3000/" class="mega-link"><strong>Construction</strong></a>
+            <a href="http://localhost:3000/" class="mega-link"><strong>Healthcare</strong></a>
+            <a href="http://localhost:3000/" class="mega-link"><strong>Professional services</strong></a>
+            <a href="http://localhost:3000/" class="mega-link"><strong>Real estate</strong></a>
+            <a href="industries.html" class="mega-link-all">
+                <span>🏪</span> All Industries
+            </a>
+        </div>
+        <div class="mega-col mega-card-col">
+            <div class="mega-card" style="padding: 0; display: flex; flex-direction: column;">
+                <div style="background: linear-gradient(135deg, #ff7a45, #d62464); color: white; padding: 2rem; border-radius: 12px; text-align: center;">
+                    <p style="font-size: 1.1rem; margin-bottom: 0.5rem; font-family: 'Playfair Display', serif;">Meet your new</p>
+                    <h3 style="font-size: 2.2rem; font-family: 'Playfair Display', serif; margin-bottom: 0;">Cofounder</h3>
+                </div>
+                <p style="padding: 1.5rem 1.5rem 0; font-weight: 600; color: #1a7b7a; line-height: 1.4;">The AI teammate built to handle your business</p>
+                <div class="mega-card-divider" style="margin: 1.5rem; height: 1px; background: rgba(0,0,0,0.1);"></div>
+                <a href="http://localhost:3000/" class="mega-card-link" style="padding: 0 1.5rem 1rem; color: #1a1a1a; font-weight: 600; text-decoration: none;">How WorkSphere compares</a>
+                <a href="http://localhost:3000/" class="mega-card-link" style="padding: 0 1.5rem 1rem; color: #1a1a1a; font-weight: 600; text-decoration: none;">Apps & integrations</a>
+                <a href="http://localhost:3000/" class="mega-card-link" style="padding: 0 1.5rem 1.5rem; color: #1a1a1a; font-weight: 600; text-decoration: none;">Changing asset management providers</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+<div class="nav-item has-dropdown">
+    <a href="accountants.html" class="nav-link">For Admins <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+    <div class="mega-menu">
+        <div class="mega-col">
+            <p class="mega-eyebrow">GROW YOUR PRACTICE</p>
+            <a href="http://localhost:3000/" class="mega-link">
+                <strong>Become a partner</strong>
+                <span>Exclusive tools, support, and revenue share</span>
+            </a>
+            <a href="http://localhost:3000/" class="mega-link">
+                <strong>WorkSphere Pro dashboard</strong>
+                <span>Track and manage all clients in one place</span>
+            </a>
+        </div>
+        <div class="mega-col">
+            <p class="mega-eyebrow">PROFESSIONAL RESOURCES</p>
+            <a href="http://localhost:3000/" class="mega-link"><strong>admin blog</strong></a>
+            <a href="http://localhost:3000/" class="mega-link"><strong>admin resources</strong></a>
+            <a href="http://localhost:3000/" class="mega-link" style="background-color: #f4f6f5; padding: 0.75rem; border-radius: 8px; color: #1a7b7a;"><strong>Professional development</strong></a>
+        </div>
+        <div class="mega-col mega-card-col">
+            <div class="mega-card" style="padding: 0; display: flex; flex-direction: column;">
+                <img src="https://picsum.photos/seed/gusto11/400/250" alt="Accountant working" style="width: 100%; border-top-left-radius: 12px; border-top-right-radius: 12px; height: 160px; object-fit: cover;">
+                <a href="http://localhost:3000/" class="mega-card-link" style="padding: 1.5rem 1.5rem 1rem; color: #1a7b7a; font-weight: 600; text-decoration: none; font-size: 1.05rem; line-height: 1.4;">Earn more with our partner program</a>
+                <div class="mega-card-divider" style="margin: 0 1.5rem 1.5rem; height: 1px; background: rgba(0,0,0,0.1);"></div>
+                <a href="http://localhost:3000/" class="mega-card-link" style="padding: 0 1.5rem 1rem; color: #1a1a1a; font-weight: 600; text-decoration: none;">How WorkSphere compares</a>
+                <a href="http://localhost:3000/" class="mega-card-link" style="padding: 0 1.5rem 1rem; color: #1a1a1a; font-weight: 600; text-decoration: none;">Apps & integrations</a>
+                <a href="http://localhost:3000/" class="mega-card-link" style="padding: 0 1.5rem 1.5rem; color: #1a1a1a; font-weight: 600; text-decoration: none;">Changing asset management providers</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+<div class="nav-item has-dropdown">
+    <a href="resources.html" class="nav-link">Documentation <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+    <div class="mega-menu">
+        <div class="mega-col">
+            <p class="mega-eyebrow">RESEARCH &amp; SUPPORT</p>
+            <a href="http://localhost:3000/" class="mega-link">
+                <strong>Talk Shop blog</strong>
+                <span>enterprise advice &amp; answers from experts</span>
+            </a>
+            <a href="http://localhost:3000/" class="mega-link">
+                <strong>Resource center</strong>
+                <span>How-to-guides, templates and articles</span>
+            </a>
+            <a href="http://localhost:3000/" class="mega-link">
+                <strong>WorkSphere Insights</strong>
+                <span>In-depth analyses and economic data</span>
+            </a>
+            <a href="http://localhost:3000/" class="mega-link">
+                <strong>Help center</strong>
+                <span>Instant step-by-step product help</span>
+            </a>
+            <a href="http://localhost:3000/" class="mega-link" style="margin-top: 0.5rem;">
+                <strong>Contact support – Log in</strong>
+            </a>
+        </div>
+        <div class="mega-col">
+            <p class="mega-eyebrow">OUR COMPANY</p>
+            <a href="http://localhost:3000/" class="mega-link"><strong>About WorkSphere</strong></a>
+            <a href="http://localhost:3000/" class="mega-link"><strong>Company news</strong></a>
+            <a href="http://localhost:3000/" class="mega-link" style="background-color: #f4f6f5; padding: 0.75rem; border-radius: 8px; color: #1a7b7a;"><strong>Careers</strong></a>
+        </div>
+        <div class="mega-col mega-card-col">
+            <div class="mega-card" style="padding: 0; display: flex; flex-direction: column;">
+                <img src="https://picsum.photos/seed/gusto12/400/250" alt="enterprise owner" style="width: 100%; border-top-left-radius: 12px; border-top-right-radius: 12px; height: 160px; object-fit: cover;">
+                <a href="http://localhost:3000/" class="mega-card-link" style="padding: 1.5rem 1.5rem 1rem; color: #1a7b7a; font-weight: 600; text-decoration: none; font-size: 1.05rem; line-height: 1.4;">First-time asset management setup guide</a>
+                <div class="mega-card-divider" style="margin: 0 1.5rem 1.5rem; height: 1px; background: rgba(0,0,0,0.1);"></div>
+                <a href="http://localhost:3000/" class="mega-card-link" style="padding: 0 1.5rem 1rem; color: #1a1a1a; font-weight: 600; text-decoration: none;">Tools &amp; calculators</a>
+                <a href="http://localhost:3000/" class="mega-card-link" style="padding: 0 1.5rem 1rem; color: #1a1a1a; font-weight: 600; text-decoration: none;">Apps &amp; integrations</a>
+                <a href="http://localhost:3000/" class="mega-card-link" style="padding: 0 1.5rem 1.5rem; color: #1a1a1a; font-weight: 600; text-decoration: none;">Changing asset management providers</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+                <a href="pricing.html" class="nav-link">Plans</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="http://localhost:3000/" class="demo-link"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg> See demo</a>
+            <button class="btn btn-primary" onclick="window.location.href='http://localhost:3000/'">Create free account</button>
+            <a href="http://localhost:3000/" class="sign-in">Sign in</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="products-hero" style="position:relative;overflow:hidden;">
+        <div class="hero-content">
+            <h1 class="hero-headline">
+                We'll run 
+                <span class="pill pill-payroll">asset management 💸</span>
+                <span class="pill pill-benefits">leave management ❤️</span>
+                <br>
+                <span class="pill pill-time">time tracking ⌚</span>
+                <span class="pill pill-hiring">hiring 👋</span>
+                <span class="pill pill-hr">HR 📋</span>
+                <br>
+                <span class="pill pill-compliance">compliance 📝</span>
+                . You run the business.
+            </h1>
+            <div class="hero-buttons">
+                <a href="#" class="btn-primary">How WorkSphere works</a>
+                <a href="#" class="btn-secondary">Create an account</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Asset management Section -->
+    <section class="payroll-section">
+        <div class="payroll-content">
+            <h2 class="payroll-title">
+                Asset Management, run 
+                <span class="icon-spin">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2888/2888704.png" alt="coin icon" style="width: 40px; vertical-align: middle;">
+                </span> 
+                and done.
+            </h2>
+            <p class="payroll-desc">
+                With WorkSphere, you can assign, track, and manage all company hardware in just a few clicks. Plus, we<br>
+                automatically monitor device lifecycles, help with IT compliance, and identify hardware under-utilization to help<br>
+                save you money—as easily (and as accurately) as possible.
+            </p>
+            <a href="#" class="btn-primary">Explore asset management features</a>
+        </div>
+
+        <div class="payroll-feature-split">
+
+            <div class="feature-right">
+                <h3 class="feature-heading">A asset management platform that<br>comes with all the perks.</h3>
+                <p>Our asset management has all kinds of tools, for all kinds of businesses. Unlimited pay runs, automatic tax calculations, next-day pay, tax registration, and pay all your employees and field agents in one place.</p>
+                <p>We could go on, but let's just say whatever your asset management needs, we've got you covered.</p>
+                <a href="#" class="learn-more-link">Learn how it works →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-banner-section">
+        <div class="pricing-banner">
+            <div class="pricing-banner-content">
+                <h2>Cost shouldn't be<br>complicated.</h2>
+                <a href="#" class="btn-pill-small">See pricing</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="benefits-header">
+            <span class="pill-outline">Employee Resource Management</span>
+            <h2 class="benefits-title">Enterprise HR ❤️ modules,<br>built to order.</h2>
+            <p class="benefits-desc">
+                Think you're too small for an enterprise HRMS? Think again. We'll help you implement scalable,<br>
+                comprehensive asset and leave management—no matter the size and shape of your team.
+            </p>
+            <a href="#" class="btn-primary btn-shadow">Explore HRMS options</a>
+        </div>
+
+        <div class="benefits-cards">
+            <!-- Left Card -->
+            <div class="b-card">
+                <div class="b-card-top b-card-light">
+                    <div class="b-ui-card">
+                        <p class="eyebrow">EXPLORE POLICIES FOR:</p>
+                        <div class="plan-option">
+                            <span class="plan-icon">🏖️</span>
+                            <span class="plan-name">Vacation</span>
+                            <span class="plan-check">✔</span>
+                        </div>
+                        <div class="plan-option active">
+                            <span class="plan-icon">🤒</span>
+                            <span class="plan-name">Sick Leave</span>
+                            <span class="plan-check">✔</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="b-card-bottom">
+                    <h3>Smart leave management for the modern team.</h3>
+                    <p>Design custom leave policies from scratch, or integrate your existing accrued time off. Either way, we'll help you create a comprehensive (not to mention competitive) package that gives your team the flexibility they need.</p>
+                    <ul class="b-list">
+                        <li><span class="check-icon">✓</span> Automatic accrued time-off calculations</li>
+                        <li><span class="check-icon">✓</span> Integrated approval workflows and slack notifications</li>
+                        <li><span class="check-icon">✓</span> WorkSphere handles leave balances, carryovers, compliance, and holiday calendars</li>
+                    </ul>
+                    <a href="#" class="btn-outline">Explore leave management</a>
+                </div>
+            </div>
+
+            <!-- Right Card -->
+            <div class="b-card">
+                <div class="b-card-top b-card-dark">
+                    <div class="b-ui-chart">
+                        <h4>PTO Analytics</h4>
+                        <p class="eyebrow">TIME OFF USAGE</p>
+                        <!-- Simulated chart line -->
+                        <div style="margin-top: 3rem; border-bottom: 2px solid #e5e5e5; position: relative;">
+                            <div style="position: absolute; bottom: 0; left: 0; width: 30%; height: 2px; background: #37a898; transform: rotate(-15deg); transform-origin: left bottom;"></div>
+                            <div style="position: absolute; bottom: 30px; left: 28%; width: 40%; height: 2px; background: #37a898; transform: rotate(10deg); transform-origin: left bottom;"></div>
+                            <div style="position: absolute; bottom: 15px; left: 66%; width: 40%; height: 2px; background: #37a898; transform: rotate(-45deg); transform-origin: left bottom;"></div>
+                        </div>
+                    </div>
+                    <div class="b-ui-widget">
+                        <p class="eyebrow" style="color: #6a2b8e;">APPROVAL RATE</p>
+                        <div class="circle-progress">
+                            <span>100%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="b-card-bottom">
+                    <h3>Advanced reporting to plan for tomorrow.</h3>
+                    <p>Set your team up for a stronger operational future. We'll help with PTO analytics that are built right into your HRMS for automated capacity planning, shift coverage, and compliance—so you can stay focused on the work you need to do today.</p>
+                    <ul class="b-list">
+                        <li><span class="check-icon">✓</span> Automatic, integrated shift coverage alerts</li>
+                        <li><span class="check-icon">✓</span> Keep up with labor law mandates</li>
+                        <li><span class="check-icon">✓</span> Automated workforce reports to help you maximize up to 100% of team efficiency</li>
+                    </ul>
+                    <a href="#" class="btn-outline">Learn about PTO analytics</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="time-section">
+        <div class="time-feature-split">
+            <div class="time-left">
+                <img src="https://picsum.photos/seed/gusto41/800/800" alt="Laptop showing WorkSphere time tracking" class="time-img">
+            </div>
+            
+            <div class="time-right">
+                <span class="pill-outline">Time and attendance</span>
+                <h3 class="time-heading">Track time <span class="clock-icon">🕒</span> in<br>no time. Really.</h3>
+                <p>Managing schedules and timesheets and PTO can be time-consuming. Or, it can be basically automatic. WorkSphere can create policies, sync hours worked, and track and approve time-off requests. Plus, our mobile time tracking makes it easy for employees to log time—anytime, from anywhere.</p>
+                <a href="#" class="learn-more-link" style="margin-top: 2rem;">See time and attendance tools →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="hiring-section">
+        <div class="hiring-feature-split">
+            <div class="hiring-left">
+                <span class="pill-outline">Hiring and onboarding</span>
+                <h3 class="hiring-heading">Let's make hiring <span class="wave-icon">👋</span><br>feel more inspiring.</h3>
+                <p>When it's time to grow, we're on your side. We'll manage job postings, offer letters, e-signing, applicant tracking, and new hire onboarding. You take that time back to move your business forward.</p>
+                <a href="#" class="learn-more-link" style="margin-top: 2rem;">See how we can help with hiring →</a>
+            </div>
+
+            <div class="hiring-right">
+                <img src="https://picsum.photos/seed/gusto42/800/800" alt="Team smiling" class="hiring-img">
+                <div class="hiring-ui-card">
+                    <p class="eyebrow" style="font-size: 0.65rem; margin-bottom: 1rem; padding: 0 1.5rem;">HIRING TOOLS</p>
+                    <div class="hiring-option active">
+                        <span class="icon">🤖</span> WorkSphere Recruiting <span class="dots">⋮</span>
+                    </div>
+                    <div class="hiring-option">
+                        <span class="icon">🔍</span> Background Checks
+                    </div>
+                    <div class="hiring-option">
+                        <span class="icon">📝</span> Offer Letters
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="awards-section">
+        <div class="awards-grid">
+            <div class="award-item">
+                <div class="award-icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3067/3067252.png" alt="Laptop icon" style="width: 50px;">
+                </div>
+                <h4>America's Best Online Platforms</h4>
+                <p>Newsweek & Statista | 2025</p>
+            </div>
+            <div class="award-item">
+                <div class="award-icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2888/2888704.png" alt="Coin icon" style="width: 50px;">
+                </div>
+                <h4>Ranked #1 Best Asset management Software</h4>
+                <p>TrustRadius | 2025</p>
+            </div>
+            <div class="award-item">
+                <div class="award-icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/889/889139.png" alt="Thumbs up icon" style="width: 50px;">
+                </div>
+                <h4>#1 Highest Satisfaction Software</h4>
+                <p>G2 Review | 2026</p>
+            </div>
+            <div class="award-item">
+                <div class="award-icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Star icon" style="width: 50px;">
+                </div>
+                <h4>4.6 star average</h4>
+                <p>Software Advice | 4,137 reviews</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-testimonials">
+        <div class="test-header">
+            <span class="pill-outline">Testimonials</span>
+            <h2 class="test-title">500,000+ businesses run<br>on <span class="diamond-icon">💎</span> WorkSphere</h2>
+        </div>
+
+        <div class="test-carousel">
+            <!-- Left Card (Partial) -->
+            <div class="test-card t-card-blue">
+                <p class="t-quote">"When you are looking for solutions, you want to find something that saves you time, that does what it's supposed to do... It streamlines how we do business."</p>
+                <div class="t-author" style="opacity: 0;"> <!-- Hidden author to keep spacing -->
+                    <div class="t-avatar"></div>
+                    <div class="t-info"><strong>Name</strong><span>Company</span></div>
+                </div>
+            </div>
+
+            <!-- Center Card (Active) -->
+            <div class="test-card t-card-purple active">
+                <p class="t-quote">With WorkSphere, asset management is easier. The first two weeks, I was handwriting checks and calculating from a punch card. This upped my game tremendously. It's so easy to log on to do asset management and set up for new hires. It takes the burden and the worry off of me.</p>
+                <div class="t-author">
+                    <img src="https://i.pravatar.cc/100?img=5" alt="Leigha Gevock-Burns" class="t-avatar">
+                    <div class="t-info">
+                        <strong>Leigha Gevock-Burns</strong>
+                        <span>See Spot Run</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Card (Partial) -->
+            <div class="test-card t-card-green">
+                <p class="t-quote">Thank God, there is a company like WorkSphere that could actually help me not have to worry about the nitty gritty... It allows me more time with my staff and my customers. It's a lot less tension, a lot more time for myself, for my family, but with my business and my customers.</p>
+                <div class="t-author">
+                    <img src="https://i.pravatar.cc/100?img=12" alt="Nafy Flatley" class="t-avatar">
+                    <div class="t-info">
+                        <strong>Nafy Flatley</strong>
+                        <span>Teranga</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-nav-container" style="display: flex; justify-content: center; align-items: center; gap: 3rem; margin-top: 4rem;">
+            <div class="test-pagination" style="display: flex; align-items: center; gap: 0.5rem;">
+                <div class="dot active" style="width: 30px; height: 10px; border-radius: 5px; background: #1a4f52; transition: all 0.3s; cursor: pointer;"></div>
+                <div class="dot" style="width: 10px; height: 10px; border-radius: 50%; background: #e8f4f1; transition: all 0.3s; cursor: pointer;"></div>
+                <div class="dot" style="width: 10px; height: 10px; border-radius: 50%; background: #e8f4f1; transition: all 0.3s; cursor: pointer;"></div>
+            </div>
+            <div class="test-nav" style="margin-top: 0;">
+                <button class="nav-btn prev-btn">←</button>
+                <button class="nav-btn next-btn">→</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="hr-section" style="padding: 6rem 2rem; max-width: 1200px; margin: 0 auto;">
+        <div class="time-feature-split">
+            <div class="time-left" style="text-align: center;">
+                <img src="https://picsum.photos/seed/gusto43/600/600" alt="HR Illustration placeholder" style="width: 80%; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); filter: sepia(0.3) hue-rotate(90deg);">
+            </div>
+            
+            <div class="time-right">
+                <span class="pill-outline">Human Resources</span>
+                <h3 class="time-heading">HR <span class="clock-icon">📋</span> isn't your<br>specialty.<br>Luckily, it's ours.</h3>
+                <p>You don't need to be an HR pro to give your team pro support. WorkSphere can help you with team reviews, feedback systems, development tools, and more. Plus we've got real people to help handle tricky questions—WorkSphere HR Partners can provide dedicated support to meet your specific needs and lighten your admin load.</p>
+                <a href="#" class="learn-more-link" style="margin-top: 2rem;">Explore HR offerings →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="compliance-section" style="padding: 2rem 2rem 6rem; max-width: 1200px; margin: 0 auto;">
+        <div class="hiring-feature-split">
+            <div class="hiring-left">
+                <span class="pill-outline">Compliance</span>
+                <h3 class="hiring-heading">Compliance? <span class="wave-icon">📝</span><br>Let's take that off<br>your plate.</h3>
+                <p>Stop stressing about things like labor laws, asset management regulations, tax requirements, and recordkeeping. WorkSphere Compliance delivers real-time updates and alerts and can help you manage required trainings, policies, and leave management. So you'll have a lot more clarity, and a lot less worry.</p>
+                <a href="#" class="learn-more-link" style="margin-top: 2rem;">See how to stay compliant →</a>
+            </div>
+
+            <div class="hiring-right">
+                <img src="images/compliance.jpg" alt="Compliance dashboard" class="hiring-img" style="clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 75%);">
+            </div>
+        </div>
+    </section>
+    
+    <section class="integrations-section">
+        <div class="test-header">
+            <span class="pill-outline">Integrations</span>
+            <h2 class="test-title">You work with lots of<br>different tools. So do we.</h2>
+        </div>
+
+        <div class="integrations-marquee-wrapper">
+            <!-- Row 1 -->
+            <div class="marquee-track track-left">
+                <!-- Group 1 -->
+                <div class="integration-card">
+                    <div class="i-card-header">
+                        <div class="i-icon"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111615.png" alt="Slack"></div>
+                        <span class="i-arrow">→</span>
+                    </div>
+                    <h4>Slack</h4>
+                    <p>Reduce admin work by automating tasks in Slack, from onboarding new hires to offboarding exits.</p>
+                </div>
+                <div class="integration-card">
+                    <div class="i-card-header">
+                        <div class="i-icon"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968880.png" alt="Salesforce"></div>
+                        <span class="i-arrow">→</span>
+                    </div>
+                    <h4>Salesforce</h4>
+                    <p>Manage your customer relations, sync your data, and power smoother workflows.</p>
+                </div>
+                <div class="integration-card">
+                    <div class="i-card-header">
+                        <div class="i-icon"><span style="font-size: 1.5rem; font-weight: bold; color: white; background: #00d075; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">E</span></div>
+                        <span class="i-arrow">→</span>
+                    </div>
+                    <h4>Expensify</h4>
+                    <p>Sync employees between WorkSphere and Expensify and enjoy smoother expense management.</p>
+                </div>
+                <div class="integration-card">
+                    <div class="i-card-header">
+                        <div class="i-icon"><img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Google"></div>
+                        <span class="i-arrow">→</span>
+                    </div>
+                    <h4>Google Workspace</h4>
+                    <p>Streamline operations and consolidate billing by joining WorkSphere with Google.</p>
+                </div>
+                
+                <!-- Group 2 (Duplicate for seamless loop) -->
+                <div class="integration-card">
+                    <div class="i-card-header">
+                        <div class="i-icon"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111615.png" alt="Slack"></div>
+                        <span class="i-arrow">→</span>
+                    </div>
+                    <h4>Slack</h4>
+                    <p>Reduce admin work by automating tasks in Slack, from onboarding new hires to offboarding exits.</p>
+                </div>
+                <div class="integration-card">
+                    <div class="i-card-header">
+                        <div class="i-icon"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968880.png" alt="Salesforce"></div>
+                        <span class="i-arrow">→</span>
+                    </div>
+                    <h4>Salesforce</h4>
+                    <p>Manage your customer relations, sync your data, and power smoother workflows.</p>
+                </div>
+                <div class="integration-card">
+                    <div class="i-card-header">
+                        <div class="i-icon"><span style="font-size: 1.5rem; font-weight: bold; color: white; background: #00d075; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">E</span></div>
+                        <span class="i-arrow">→</span>
+                    </div>
+                    <h4>Expensify</h4>
+                    <p>Sync employees between WorkSphere and Expensify and enjoy smoother expense management.</p>
+                </div>
+                <div class="integration-card">
+                    <div class="i-card-header">
+                        <div class="i-icon"><img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Google"></div>
+                        <span class="i-arrow">→</span>
+                    </div>
+                    <h4>Google Workspace</h4>
+                    <p>Streamline operations and consolidate billing by joining WorkSphere with Google.</p>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="marquee-track track-right">
+                <!-- Group 1 -->
+                <div class="integration-card">
+                    <div class="i-card-header">
+                        <div class="i-icon"><span style="font-size: 1.2rem; font-weight: bold; color: white; background: #2ca01c; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">qb</span></div>
+                        <span class="i-arrow">→</span>
+                    </div>
+                    <h4>QuickBooks</h4>
+                    <p>Sync your team's hours from QuickBooks Time into WorkSphere for accurate (and speedier) asset management.</p>
+                </div>
+                <div class="integration-card">
+                    <div class="i-card-header">
+                        <div class="i-icon"><span style="font-size: 1.2rem; font-weight: bold; color: white; background: linear-gradient(135deg, #00a4ef, #ffb900, #7fba00, #f25022); border-radius: 4px; width: 30px; height: 30px; display: block;"></span></div>
+                        <span class="i-arrow">→</span>
+                    </div>
+                    <h4>Microsoft 365</h4>
+                    <p>Connect HR updates directly into the spaces where you spend your work day.</p>
+                </div>
+                <div class="integration-card">
+                    <div class="i-card-header">
+                        <div class="i-icon"><span style="font-size: 1.5rem; color: #41b853;">🍀</span></div>
+                        <span class="i-arrow">→</span>
+                    </div>
+                    <h4>Clover</h4>
+                    <p>Create a seamless connection between your point-of-sale system and your asset management services.</p>
+                </div>
+                <div class="integration-card">
+                    <div class="i-card-header">
+                        <div class="i-icon"><span style="font-size: 1rem; font-weight: bold; color: white; background: #13b5ea; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">xero</span></div>
+                        <span class="i-arrow">→</span>
+                    </div>
+                    <h4>Xero</h4>
+                    <p>See financial information, send invoices, pay bills, and keep an eye on your finances from anywhere, anytime.</p>
+                </div>
+                
+                <!-- Group 2 (Duplicate for seamless loop) -->
+                <div class="integration-card">
+                    <div class="i-card-header">
+                        <div class="i-icon"><span style="font-size: 1.2rem; font-weight: bold; color: white; background: #2ca01c; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">qb</span></div>
+                        <span class="i-arrow">→</span>
+                    </div>
+                    <h4>QuickBooks</h4>
+                    <p>Sync your team's hours from QuickBooks Time into WorkSphere for accurate (and speedier) asset management.</p>
+                </div>
+                <div class="integration-card">
+                    <div class="i-card-header">
+                        <div class="i-icon"><span style="font-size: 1.2rem; font-weight: bold; color: white; background: linear-gradient(135deg, #00a4ef, #ffb900, #7fba00, #f25022); border-radius: 4px; width: 30px; height: 30px; display: block;"></span></div>
+                        <span class="i-arrow">→</span>
+                    </div>
+                    <h4>Microsoft 365</h4>
+                    <p>Connect HR updates directly into the spaces where you spend your work day.</p>
+                </div>
+                <div class="integration-card">
+                    <div class="i-card-header">
+                        <div class="i-icon"><span style="font-size: 1.5rem; color: #41b853;">🍀</span></div>
+                        <span class="i-arrow">→</span>
+                    </div>
+                    <h4>Clover</h4>
+                    <p>Create a seamless connection between your point-of-sale system and your asset management services.</p>
+                </div>
+                <div class="integration-card">
+                    <div class="i-card-header">
+                        <div class="i-icon"><span style="font-size: 1rem; font-weight: bold; color: white; background: #13b5ea; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">xero</span></div>
+                        <span class="i-arrow">→</span>
+                    </div>
+                    <h4>Xero</h4>
+                    <p>See financial information, send invoices, pay bills, and keep an eye on your finances from anywhere, anytime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ready-cta-section">
+        <div class="cta-top-split">
+            <div class="cta-left">
+                <span class="pill-outline cta-pill">Get started</span>
+                <h2 class="cta-heading">Ready to work with<br>WorkSphere?</h2>
+            </div>
+            <div class="cta-right">
+                <ul class="cta-list">
+                    <li>Create your free account.</li>
+                    <li>Add your team (or let them self-onboard).</li>
+                    <li>Run your first asset management.</li>
+                </ul>
+                <button class="cta-btn">Sign up for free</button>
+            </div>
+        </div>
+
+        <div class="cta-cards-grid">
+            <div class="cta-image-card">
+                <div class="img-wrapper">
+                    <img src="https://picsum.photos/seed/gusto45/800/500" alt="Team">
+                    <button class="img-arrow-btn">→</button>
+                </div>
+                <h4>See all the options. Find one that fits.</h4>
+                <p>We have plans for any size business. Maybe you're just paying yourself. Or supporting a small, but mighty team? Or maybe you've got a big, complicated business, with teammates in different states, with vastly different needs? Whatever it looks like, we've got options for you.</p>
+            </div>
+            <div class="cta-image-card">
+                <div class="img-wrapper">
+                    <img src="https://picsum.photos/seed/gusto46/800/500" alt="Support">
+                    <button class="img-arrow-btn">→</button>
+                </div>
+                <h4>Real support, at your service.</h4>
+                <p>Our support team is exceptional, and we're proud to say it. Whenever you need a little extra advice, they'll be right by your side (metaphorically speaking). And with our Premium Plan, you'll even get a dedicated customer success manager to support you day in and day out.</p>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h4>PRODUCT</h4>
+            <div class="col-divider"></div>
+            <ul>
+                <li><a href="#">Product Releases</a></li>
+                <li><a href="#">Imagine With WorkSphere</a></li>
+            
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Enterprise Plan</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>COMMUNITY</h4>
+            <div class="col-divider"></div>
+            <ul>
+                <li><a href="#">Slack</a></li>
+                <li><a href="#">Reddit Community</a></li>
+                <li><a href="#">X / Twitter</a></li>
+            
+                <li><a href="#">Learn</a></li>
+                <li><a href="#">Use Cases</a></li>
+                <li><a href="#">Compare WorkSphere</a></li>
+                <li><a href="#">Getting Started Guide</a></li>
+                <li><a href="#">Template Gallery</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>SUPPORT</h4>
+            <div class="col-divider"></div>
+            <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Contact Support</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>COMPANY</h4>
+            <div class="col-divider"></div>
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Affiliate Program</a></li>
+                <li><a href="#">Media</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>LEGAL</h4>
+            <div class="col-divider"></div>
+            <ul>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Security</a></li>
+                <li><a href="#">ESG</a></li>
+                <li><a href="#">Responsible Disclosure</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>FEATURES</h4>
+            <div class="col-divider"></div>
+            <ul>
+                <li><a href="#">Asset Management</a></li>
+                <li><a href="#">Leave Management</a></li>
+                <li><a href="#">Time Tracking</a></li>
+                <li><a href="#">Hiring</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>DOWNLOAD</h4>
+            <div class="col-divider"></div>
+            <ul>
+                <li><a href="#">WorkSphere for iPhone</a></li>
+                <li><a href="#">WorkSphere for iPad</a></li>
+                <li><a href="#">WorkSphere for Mac</a></li>
+                <li><a href="#">WorkSphere for Windows</a></li>
+                <li><a href="#">Windows x64</a></li>
+                <li><a href="#">Windows ARM64</a></li>
+                <li><a href="#">WorkSphere for Vision Pro</a></li>
+                <li><a href="#">WorkSphere for Android</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom-row">
+        <div class="footer-legal">
+            © 2026 WorkSphere, Inc. All rights reserved.
+        </div>
+        <div class="footer-social-wrapper">
+            <span class="footer-lang">English</span>
+            <div class="footer-social">
+                <a href="#">IG</a>
+                <a href="#">YT</a>
+                <a href="#">X</a>
+                <a href="#">in</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+
+    <script>
+    // Highlight active nav link based on current page
+    (function() {
+        var page = window.location.pathname.split('/').pop() || 'index.html';
+        var map = {
+            'products.html': 'products.html',
+            'business-types.html': 'business-types.html',
+            'accountants.html': 'accountants.html',
+            'resources.html': 'resources.html',
+            'pricing.html': 'pricing.html',
+            'industries.html': 'business-types.html'
+        };
+        var target = map[page];
+        if (target) {
+            var links = document.querySelectorAll('.nav-link');
+            links.forEach(function(link) {
+                if (link.getAttribute('href') === target) {
+                    link.classList.add('nav-active');
+                }
+            });
+        }
+    })();
+    </script>
+
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+<!-- Mobile Slide Menu -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-slide-menu" id="mobileMenu">
+  <button class="close-btn" id="mobileMenuClose">&#x2715;</button>
+  <a href="index.html">Home</a>
+  <a href="products.html">Features</a>
+  <a href="industries.html">Solutions</a>
+  <a href="accountants.html">For Admins</a>
+  <a href="resources.html">Documentation</a>
+  <a href="pricing.html">Plans &amp; Pricing</a>
+  <hr style="margin:1rem 0;border:none;border-top:1px solid #eee;">
+  <a href="http://localhost:3000/" style="color:#ea503f;font-weight:700;">Sign In</a>
+  <a href="http://localhost:3000/" class="btn btn-primary" style="margin-top:1rem;text-align:center;display:block;background:#0c0c0c;color:#fff;padding:0.8rem;border-radius:8px;">Create free account</a>
+</div>
+<script>
+(function(){
+  var btn = document.getElementById("hamburger-btn");
+  var menu = document.getElementById("mobileMenu");
+  var overlay = document.getElementById("mobileOverlay");
+  var closeBtn = document.getElementById("mobileMenuClose");
+  function open(){ menu.classList.add("open"); overlay.classList.add("open"); document.body.style.overflow="hidden"; }
+  function close(){ menu.classList.remove("open"); overlay.classList.remove("open"); document.body.style.overflow=""; }
+  if(btn) btn.addEventListener("click", open);
+  if(closeBtn) closeBtn.addEventListener("click", close);
+  if(overlay) overlay.addEventListener("click", close);
+})();
+</script>
+</body>
+</html>

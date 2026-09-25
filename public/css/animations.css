@@ -1,0 +1,314 @@
+/* --- Global Animations --- */
+
+/* Base class for elements that will be animated on scroll */
+.animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    will-change: opacity, transform;
+}
+
+/* When the element is in view, this class is added */
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Specific Animation Styles (Initial states) */
+.fade-up {
+    transform: translateY(20px);
+}
+
+.fade-in {
+    transform: none;
+}
+
+.slide-in-right {
+    transform: translateX(20px);
+}
+
+.slide-in-left {
+    transform: translateX(-20px);
+}
+
+.scale-up {
+    transform: scale(0.97);
+}
+
+/* Stagger delays for grids/lists */
+.delay-100 { transition-delay: 50ms; }
+.delay-200 { transition-delay: 100ms; }
+.delay-300 { transition-delay: 150ms; }
+.delay-400 { transition-delay: 200ms; }
+.delay-500 { transition-delay: 250ms; }
+
+/* Continuous floating animation for hero background shapes */
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+.float-anim {
+    animation: float 6s ease-in-out infinite;
+}
+
+
+/* --- Navbar Pill Styles --- */
+.nav-right .btn-primary {
+    background-color: #0c0c0c !important;
+    color: #ffffff !important;
+    border-radius: 999px !important;
+    padding: 0.7rem 1.5rem !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    border: none !important;
+    transition: transform 0.2s, background-color 0.2s !important;
+}
+
+.nav-right .btn-primary:hover {
+    background-color: #000000 !important;
+    transform: scale(1.02) !important;
+}
+
+.nav-right .sign-in {
+    font-weight: 600;
+    color: #000 !important;
+    text-decoration: none !important;
+    font-size: 0.95rem !important;
+}
+.nav-right .demo-link {
+    display: none !important;
+}
+
+/* Ensure body or hero has padding for fixed navbar */
+body {
+    padding-top: 5rem !important;
+}
+.hero-section, .hero, .products-hero {
+    padding-top: 2rem !important;
+}
+
+
+/* --- Craft-Style Floating Footer Overrides --- */
+.site-footer {
+    background-color: #0c0c0c !important;
+    color: #a3a3a3 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    padding: 5rem 10% 3rem !important;
+    border: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15) !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+.footer-col h4, .sec-col h4 {
+    color: #ffffff !important;
+    text-transform: uppercase !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 1px !important;
+    font-weight: 700 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding-bottom: 0.75rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.footer-col a, .sec-col a, .footer-legal a, .footer-social a {
+    color: #8a8a8a !important;
+    font-size: 0.85rem !important;
+    text-decoration: none !important;
+    transition: color 0.2s !important;
+}
+
+.footer-col a:hover, .sec-col a:hover, .footer-legal a:hover, .footer-social a:hover {
+    color: #ffffff !important;
+}
+
+.footer-divider {
+    background: rgba(255, 255, 255, 0.1) !important;
+    margin: 3rem auto !important;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding-top: 2rem !important;
+    margin-top: 4rem !important;
+    color: #737373 !important;
+}
+
+.footer-legal, .footer-legal a {
+    color: #737373 !important;
+}
+
+.social-links {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.social-links a {
+    color: #8a8a8a !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 0.4rem !important;
+    border-radius: 6px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s !important;
+}
+
+.social-links a:hover {
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.footer-small-text, .text-teal {
+    color: #737373 !important;
+}
+
+
+/* Craft Style Footer Override */
+.site-footer {
+    background-color: #111111 !important;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E") !important;
+    border-radius: 12px;
+    margin: 2rem !important;
+    padding: 4rem 4rem 2rem 4rem !important;
+    color: #a0a0a0 !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+.footer-grid {
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+    gap: 2rem !important;
+    max-width: 100% !important;
+    padding-bottom: 4rem !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    margin: 0 !important;
+}
+
+.footer-col h4 {
+    color: #ffffff !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.05em !important;
+    margin-bottom: 1rem !important;
+    text-transform: uppercase !important;
+}
+
+.col-divider {
+    height: 1px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    margin: 1rem 0 !important;
+    width: 100% !important;
+}
+
+.footer-col ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.footer-col li {
+    margin-bottom: 0.75rem !important;
+}
+
+.footer-col a {
+    color: #a0a0a0 !important;
+    text-decoration: none !important;
+    font-size: 0.85rem !important;
+    transition: color 0.2s !important;
+}
+
+.footer-col a:hover {
+    color: #ffffff !important;
+}
+
+.footer-col .indented {
+    padding-left: 1rem !important;
+}
+
+.footer-col .sub-group-title a {
+    color: #ffffff !important;
+}
+
+.footer-bottom-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-top: 2rem !important;
+    font-size: 0.85rem !important;
+}
+
+.footer-social-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+}
+
+.footer-social {
+    display: flex !important;
+    gap: 0.5rem !important;
+}
+
+.footer-social a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 32px !important;
+    height: 32px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 6px !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    transition: background 0.2s !important;
+    font-size: 0.8rem !important;
+}
+
+.footer-social a:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+
+/* FINAL OVERRIDE FOR FOOTER: Pure black, no curves, max width */
+.site-footer {
+    background-color: #000000 !important;
+    background-image: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 6rem 5% 4rem 5% !important;
+}
+
+
+/* ALIGNMENT FIX FOR FOOTER COLUMNS */
+.footer-col {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+}
+.footer-col h4, .footer-col .col-divider, .footer-col ul {
+    align-self: flex-start !important;
+    text-align: left !important;
+    width: 100% !important;
+}
+.footer-col li {
+    text-align: left !important;
+}
+
+.col-divider { display: none !important; }
+
+/* FIX: Keep award badges in one row on all pages */
+.logos-top {
+    flex-wrap: nowrap !important;
+    gap: 3rem !important;
+}
+
+/* FIX: 4 awards in one row */
+.awards-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1.5rem !important;
+}

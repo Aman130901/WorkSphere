@@ -1,0 +1,387 @@
+﻿/* ============================================================
+   WorkSphere — Global Styles
+   Animations, 3D Effects, Responsiveness, Smooth Scroll
+   ============================================================ */
+
+/* ── IMPORTS ─────────────────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+/* ── RESET & BASE ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── LENIS SMOOTH SCROLL ──────────────────────────────────── */
+html.lenis { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* ── SCROLL ANIMATIONS ────────────────────────────────────── */
+.animate-on-scroll {
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.animate-on-scroll.is-visible { opacity: 1; transform: none !important; }
+
+.fade-up    { transform: translateY(40px); }
+.fade-down  { transform: translateY(-40px); }
+.fade-in    { transform: none; }
+.slide-in-right { transform: translateX(60px); }
+.slide-in-left  { transform: translateX(-60px); }
+.scale-up   { transform: scale(0.92); }
+.zoom-in    { transform: scale(0.85); }
+
+.delay-100 { transition-delay: 80ms !important; }
+.delay-200 { transition-delay: 160ms !important; }
+.delay-300 { transition-delay: 240ms !important; }
+.delay-400 { transition-delay: 320ms !important; }
+.delay-500 { transition-delay: 400ms !important; }
+
+/* ── 3D ANIMATIONS ────────────────────────────────────────── */
+@keyframes float3d {
+  0%   { transform: perspective(600px) translateY(0px) rotateX(0deg); }
+  33%  { transform: perspective(600px) translateY(-12px) rotateX(3deg); }
+  66%  { transform: perspective(600px) translateY(-6px) rotateX(-2deg); }
+  100% { transform: perspective(600px) translateY(0px) rotateX(0deg); }
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-18px); }
+}
+@keyframes rotateOrbit {
+  from { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+}
+@keyframes morphBlob {
+  0%   { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50%  { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(234, 80, 63, 0.3); }
+  50%       { box-shadow: 0 0 50px rgba(234, 80, 63, 0.7), 0 0 80px rgba(234, 80, 63, 0.3); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes rippleAnim { to { transform: scale(4); opacity: 0; } }
+@keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes bounceDot {
+  0%, 80%, 100% { transform: scale(0); }
+  40%            { transform: scale(1); }
+}
+
+/* Helper classes */
+.float-anim   { animation: floatY 6s ease-in-out infinite; }
+.float-3d     { animation: float3d 7s ease-in-out infinite; }
+.morph-blob   { animation: morphBlob 10s ease-in-out infinite; }
+.pulse-glow   { animation: pulseGlow 2s ease-in-out infinite; }
+.spin-slow    { animation: spinSlow 20s linear infinite; }
+.parallax-float { will-change: transform; }
+
+/* ── NAVBAR ───────────────────────────────────────────────── */
+.navbar.scrolled, .site-header.scrolled {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  box-shadow: 0 1px 20px rgba(0,0,0,0.08) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* ── BUTTONS ──────────────────────────────────────────────── */
+.btn, .btn-primary, .btn-secondary {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+.btn:hover, .btn-primary:hover, .btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+.btn:active, .btn-primary:active { transform: translateY(0) scale(0.98); }
+
+/* ── CARDS — 3D Tilt (JS adds transform, CSS handles base) ── */
+.pricing-card, .resource-card, .tool-item, .feature-card, .award-item, .feature-box, .feat-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.pricing-card:hover, .resource-card:hover, .tool-item:hover {
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+}
+
+/* ── TOOLS GRID — responsive ─────────────────────────────── */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (max-width: 1024px) { .tools-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px)  { .tools-grid { grid-template-columns: 1fr; } }
+
+/* ── FOOTER GRID — responsive ────────────────────────────── */
+.footer-grid {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  gap: 2rem !important;
+}
+@media (max-width: 1200px) { .footer-grid { grid-template-columns: repeat(4, 1fr) !important; } }
+@media (max-width: 768px)  { .footer-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+@media (max-width: 480px)  { .footer-grid { grid-template-columns: 1fr !important; } }
+
+/* ── AWARDS / LOGOS — 4 in one row ───────────────────────── */
+.awards-grid { grid-template-columns: repeat(4, 1fr) !important; }
+.logos-top { flex-wrap: nowrap !important; gap: 2rem !important; }
+@media (max-width: 768px) {
+  .awards-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .logos-top { flex-wrap: wrap !important; }
+}
+
+/* ── PRICING CARDS ────────────────────────────────────────── */
+.pricing-cards-wrapper, .plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 1024px) {
+  .pricing-cards-wrapper, .plans-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .pricing-cards-wrapper, .plans-grid { grid-template-columns: 1fr; }
+}
+
+/* ── RESOURCE GRID ────────────────────────────────────────── */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+@media (max-width: 1024px) { .resource-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px)  { .resource-grid { grid-template-columns: 1fr; } }
+
+/* ── COMPARE TABLE — mobile scroll ───────────────────────── */
+.compare-section { overflow-x: auto; }
+.compare-table { min-width: 700px; }
+
+/* ── MOBILE NAV ───────────────────────────────────────────── */
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 998;
+  backdrop-filter: blur(4px);
+}
+.mobile-nav-overlay.open { display: block; }
+
+@media (max-width: 768px) {
+  .nav-center, .nav-links { display: none !important; }
+  .mega-menu { display: none !important; }
+
+  body { padding-top: 4rem !important; }
+
+  /* Stacked sections on mobile */
+  section { padding: 3rem 1.2rem !important; }
+  h1 { font-size: clamp(1.8rem, 6vw, 3.5rem) !important; }
+  h2 { font-size: clamp(1.4rem, 5vw, 2.5rem) !important; }
+  .hero-title { font-size: clamp(2rem, 7vw, 4rem) !important; }
+
+  /* Featured resource stack */
+  .featured-card { flex-direction: column !important; }
+  .featured-image { width: 100% !important; }
+
+  /* Nav bar */
+  .navbar, .site-header { padding: 0.8rem 1rem !important; }
+  .nav-logo { font-size: 1.2rem !important; }
+}
+
+/* ── HERO SECTIONS — responsive ──────────────────────────── */
+.hero-section, .products-hero, .resources-hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .hero-section, .products-hero, .resources-hero { min-height: 60vh; }
+}
+
+/* ── SHIMMER GRADIENT TEXT ────────────────────────────────── */
+.shimmer-text {
+  background: linear-gradient(90deg, currentColor 25%, rgba(255,255,255,0.8) 50%, currentColor 75%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ── 3D HERO ORBS ─────────────────────────────────────────── */
+.orb-3d {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: morphBlob 12s ease-in-out infinite, pulseGlow 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ── SECTION ENTRY ANIMATIONS ────────────────────────────── */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.section-reveal.visible { opacity: 1; transform: none; }
+
+/* ── SCROLLBAR ────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.4); }
+
+/* ── NAVBAR BUTTON OVERRIDES ──────────────────────────────── */
+.nav-right .btn-primary {
+  background-color: #0c0c0c !important;
+  color: #ffffff !important;
+  border-radius: 999px !important;
+  padding: 0.6rem 1.4rem !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  border: none !important;
+  transition: transform 0.2s, background-color 0.2s !important;
+}
+.nav-right .btn-primary:hover {
+  background-color: #333 !important;
+  transform: scale(1.03) translateY(-1px) !important;
+}
+.nav-right .sign-in {
+  font-weight: 600;
+  color: #000 !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+}
+.nav-right .demo-link { display: none !important; }
+
+/* ── FOOTER ───────────────────────────────────────────────── */
+.site-footer {
+  background-color: #000000 !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 6rem 5% 4rem 5% !important;
+  color: #a0a0a0 !important;
+}
+.footer-col h4 {
+  color: #ffffff !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 1rem !important;
+  text-transform: uppercase !important;
+}
+.footer-col a { color: #a0a0a0 !important; text-decoration: none !important; font-size: 0.85rem !important; transition: color 0.2s !important; }
+.footer-col a:hover { color: #ffffff !important; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1) !important; padding-top: 2rem !important; margin-top: 4rem !important; color: #737373 !important; }
+.footer-bottom-row { display: flex !important; justify-content: space-between !important; align-items: center !important; margin-top: 2rem !important; font-size: 0.85rem !important; }
+.col-divider { display: none !important; }
+.footer-col { display: flex !important; flex-direction: column !important; align-items: flex-start !important; }
+.footer-social a { display: flex !important; align-items: center !important; justify-content: center !important; width: 32px !important; height: 32px !important; border: 1px solid rgba(255,255,255,0.2) !important; border-radius: 6px !important; color: #fff !important; text-decoration: none !important; transition: background 0.2s !important; font-size: 0.8rem !important; }
+.footer-social a:hover { background: rgba(255,255,255,0.1) !important; }
+
+/* ── FAQ ACCORDION ────────────────────────────────────────── */
+.clean-accordion-content {
+  display: none;
+  overflow: hidden;
+  animation: slideInUp 0.3s ease forwards;
+}
+.clean-accordion-header { cursor: pointer; transition: color 0.2s; }
+.clean-accordion-header:hover { color: #ea503f; }
+.clean-accordion-item { border-bottom: 1px solid #eaeaea; }
+
+/* ── BODY PADDING FOR FIXED NAVBAR ───────────────────────── */
+body { padding-top: 5rem !important; }
+.hero-section, .hero, .products-hero { padding-top: 2rem !important; }
+
+/* ── HAMBURGER / MOBILE NAV ───────────────────────────────── */
+@media (max-width: 900px) {
+  .hamburger-btn { display: flex !important; align-items: center; justify-content: center; }
+  .nav-center { display: none !important; }
+}
+
+/* Mobile Slide-in Menu */
+.mobile-slide-menu {
+  display: none;
+  position: fixed;
+  top: 0; right: 0;
+  width: 85%; max-width: 360px; height: 100vh;
+  background: #fff;
+  z-index: 10000;
+  box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 2rem 1.5rem;
+}
+.mobile-slide-menu.open {
+  display: block;
+  transform: translateX(0);
+}
+.mobile-slide-menu .close-btn {
+  background: none; border: none; cursor: pointer;
+  float: right; font-size: 1.5rem; margin-bottom: 2rem;
+}
+.mobile-slide-menu a {
+  display: block;
+  padding: 0.9rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px solid #f0f0f0;
+  transition: color 0.2s;
+}
+.mobile-slide-menu a:hover { color: #ea503f; }
+.mobile-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+  backdrop-filter: blur(3px);
+}
+.mobile-overlay.open { display: block; }
+
+/* ── MISC RESPONSIVE FIXES ───────────────────────────────── */
+img, video { max-width: 100%; height: auto; }
+.container, .content-wrapper { padding-left: 1rem; padding-right: 1rem; }
+
+@media (max-width: 768px) {
+  table { display: block; overflow-x: auto; white-space: nowrap; }
+  .addons-grid { grid-template-columns: 1fr !important; }
+  .hero-cta-buttons { flex-direction: column !important; gap: 1rem !important; }
+  .split-layout { flex-direction: column !important; }
+  .pricing-card { min-width: 0 !important; }
+  .clean-faqs-section { padding: 3rem 1rem !important; }
+  .compare-section { padding: 2rem 0 !important; }
+}
+@media (max-width: 480px) {
+  .btn, .btn-primary, .btn-secondary { width: 100% !important; text-align: center !important; display: block !important; }
+  .search-mockup { flex-direction: column !important; }
+  .search-mockup button { width: 100% !important; border-radius: 8px !important; }
+}

@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Manrope", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Craft-inspired warm neutrals + coral accent */
+  --color-craft-cream: #FBF7F0;
+  --color-craft-cream-dark: #16140F;
+  --color-craft-coral: #F15A29;
+  --color-craft-coral-dark: #FF7A45;
+  --color-craft-ink: #1C1917;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* ==================================================
+   GLOBAL PREMIUM "INTERFACE PROJECT" AESTHETIC OVERRIDES
+   ================================================== */
+main {
+  background: linear-gradient(135deg, #110602 0%, #2b0800 50%, #7a1505 100%) !important;
+  color: #f3f4f6 !important;
+  position: relative;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+main::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(234, 80, 63, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: floatOrb 10s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, 40px) scale(1.1); }
+  100% { transform: translate(20px, -20px) scale(0.9); }
+}
+
+/* Make all standard view components glassmorphic */
+main .bg-white, main .bg-stone-50, main .bg-stone-100, main .bg-stone-200, main .bg-stone-300, main .bg-gray-50, main .bg-gray-100, main .bg-white\/50, main .bg-white\/80 {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(20px) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  color: #fff !important;
+}
+
+/* Adjust text colors for dark mode visibility */
+main .text-stone-900, main .text-stone-800 { color: #ffffff !important; }
+main .text-stone-700, main .text-stone-600 { color: rgba(255, 255, 255, 0.9) !important; }
+main .text-stone-500, main .text-stone-400 { color: rgba(255, 255, 255, 0.6) !important; }
+main .border-stone-200, main .border-stone-300 { border-color: rgba(255, 255, 255, 0.1) !important; }
+
+/* 3D Animations & 2D Micro-interactions for Cards */
+main .rounded-xl.border, main .rounded-2xl.border, main .rounded-lg.border, main .rounded-md.border {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1) !important;
+  transform-style: preserve-3d;
+}
+
+main .rounded-xl.border:hover, main .rounded-2xl.border:hover, main .rounded-lg.border:hover, main .rounded-md.border:hover {
+  transform: translateY(-6px) scale(1.02) !important;
+  box-shadow: 0 25px 50px -12px rgba(234, 80, 63, 0.3) !important;
+  border-color: rgba(234, 80, 63, 0.5) !important;
+}
+
+/* Input Fields and Selects */
+main input, main select {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+  transition: all 0.3s ease !important;
+}
+main input:focus, main select:focus {
+  border-color: #ea503f !important;
+  box-shadow: 0 0 10px rgba(234, 80, 63, 0.4) !important;
+}
+
+/* Fonts and Table overrides */
+main h1, main h2, main h3, main h4 {
+  font-family: 'Outfit', sans-serif !important;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+main table th {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+main table tr {
+  border-bottom-color: rgba(255, 255, 255, 0.05) !important;
+  transition: all 0.2s ease !important;
+}
+
+main table tr:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Custom Scrollbar for Premium Feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Fix Native Select Dropdowns */
+select option {
+  background-color: #150805 !important;
+  color: #f1f1f1 !important;
+  padding: 12px !important;
+  font-weight: 600 !important;
+}
+
+select:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 1px rgba(234, 80, 63, 0.5) !important;
+}

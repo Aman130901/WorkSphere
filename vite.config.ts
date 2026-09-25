@@ -1,0 +1,31 @@
+import tailwindcss from '@tailwindcss/vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
+import {defineConfig} from 'vite';
+
+export default defineConfig(() => {
+  return {
+    plugins: [react(), tailwindcss()],
+    build: {
+      rollupOptions: {
+        input: {
+          app: path.resolve(__dirname, 'app.html')
+        }
+      }
+    },
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, '.'),
+      },
+    },
+    server: {
+      // HMR can be disabled via the DISABLE_HMR env var (useful in some hosted/sandbox environments).
+      hmr: process.env.DISABLE_HMR !== 'true',
+      // Disable file watching when DISABLE_HMR is true to save CPU in that mode.
+      watch: process.env.DISABLE_HMR === 'true' ? null : {
+        ignored: ['**/db.json', '**/saas_db.json']
+      },
+    },
+  };
+});
+

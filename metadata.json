@@ -1,0 +1,10 @@
+{
+  "name": "Enterprise Employee Asset & Leave Management System",
+  "description": "A comprehensive HRMS platform for managing employees, attendance, leaves, company assets, departments, settings, and role-based permissions.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -299,6 +299,17 @@ html, body {
         white-space: normal !important;
         height: auto !important;
     }
+    
+    /* Pricing Table Mobile Fix */
+    .compare-table-wrapper {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        width: 100% !important;
+        margin-bottom: 2rem !important;
+    }
+    .compare-table {
+        min-width: 700px !important;
+    }
 }
 
 @media (max-width: 480px) {

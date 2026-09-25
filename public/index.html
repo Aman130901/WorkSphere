@@ -852,5 +852,19 @@
   if(overlay) overlay.addEventListener("click", close);
 })();
 </script>
+<script>
+(function() {
+    // Handling click on Hiring Features
+    var hiringFeatures = document.querySelectorAll('.hiring-feature');
+    hiringFeatures.forEach(function(feature) {
+        feature.addEventListener('click', function() {
+            // Remove active from all
+            hiringFeatures.forEach(function(f) { f.classList.remove('active'); });
+            // Add active to clicked
+            this.classList.add('active');
+        });
+    });
+})();
+</script>
 </body>
 </html>

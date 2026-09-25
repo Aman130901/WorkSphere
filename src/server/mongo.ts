@@ -19,7 +19,8 @@ export async function loadState(collectionName: string, defaultData: any) {
   try {
     const c = await getMongoClient();
     const db = c.db("worksphere");
-    const doc = await db.collection(collectionName).findOne({ _id: "main_state" });
+    // @ts-ignore - TS complains about string _id, but we are using string IDs
+    const doc = await db.collection(collectionName).findOne({ _id: "main_state" as any });
     if (doc && doc.data) {
       return doc.data;
     }
@@ -44,7 +45,8 @@ export async function saveState(collectionName: string, data: any) {
     const c = await getMongoClient();
     const db = c.db("worksphere");
     await db.collection(collectionName).updateOne(
-      { _id: "main_state" },
+      // @ts-ignore
+      { _id: "main_state" as any },
       { $set: { data, updatedAt: new Date() } },
       { upsert: true }
     );

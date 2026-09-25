@@ -141,26 +141,33 @@ const INITIAL_SAAS_DB: SaasDatabase = {
   anomalies: []
 };
 
-function readSaasDb(): SaasDatabase {
-  try {
-    if (!fs.existsSync(SAAS_DB_PATH)) {
-      fs.writeFileSync(SAAS_DB_PATH, JSON.stringify(INITIAL_SAAS_DB, null, 2), "utf8");
-      return INITIAL_SAAS_DB;
-    }
-    const data = fs.readFileSync(SAAS_DB_PATH, "utf8");
-    return JSON.parse(data);
-  } catch (err) {
-    console.error("Error reading SaaS database:", err);
-    return INITIAL_SAAS_DB;
+import { loadState, saveState } from "./mongo";
+
+let saasDbState: SaasDatabase | null = null;
+export let isSaasDbDirty = false;
+
+export async function initSaasDb() {
+  saasDbState = await loadState('saas_db', INITIAL_SAAS_DB);
+}
+
+export async function flushSaasDb() {
+  if (isSaasDbDirty && saasDbState) {
+    await saveState('saas_db', saasDbState);
+    isSaasDbDirty = false;
   }
 }
 
-function writeSaasDb(data: SaasDatabase) {
-  try {
-    fs.writeFileSync(SAAS_DB_PATH, JSON.stringify(data, null, 2), "utf8");
-  } catch (err) {
-    console.error("Error writing SaaS database:", err);
+function readSaasDb(): SaasDatabase {
+  if (!saasDbState) {
+    saasDbState = INITIAL_SAAS_DB;
+    return INITIAL_SAAS_DB;
   }
+  return saasDbState;
+}
+
+function writeSaasDb(data: SaasDatabase) {
+  saasDbState = data;
+  isSaasDbDirty = true;
 }
 
 export const saasDb = {

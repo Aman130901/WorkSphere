@@ -5,8 +5,8 @@ import jwt from "jsonwebtoken";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI } from "@google/genai";
 import bcrypt from "bcryptjs";
-import { db, UserRole, LeaveStatus, AssetCategory, AssetStatus, LeaveType } from "./src/server/db";
-import { saasDb } from "./src/server/saas_db";
+import { db, UserRole, LeaveStatus, AssetCategory, AssetStatus, LeaveType, initDb, flushDb } from "./src/server/db";
+import { saasDb, initSaasDb, flushSaasDb } from "./src/server/saas_db";
 import { Asset } from "./src/types";
 
 const app = express();
@@ -16,6 +16,21 @@ const JWT_SECRET = process.env.JWT_SECRET || "enterprise-hrms-secret-key-2026";
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Mongo Persistence Middleware
+app.use((req, res, next) => {
+  const originalSend = res.send;
+  res.send = function (body) {
+    if (res.headersSent) return originalSend.call(this, body);
+    Promise.all([flushDb(), flushSaasDb()])
+      .catch(console.error)
+      .finally(() => {
+        originalSend.call(this, body);
+      });
+    return this;
+  };
+  next();
+});
 
 // Express Request Extension Type (JWT Payload)
 interface AuthenticatedRequest extends Request {
@@ -1776,6 +1791,10 @@ app.put("/api/saas/anomalies/:id/resolve", (req: Request, res: Response) => {
 // ==================================================
 
 async function startServer() {
+  console.log("Initializing databases from MongoDB/Local...");
+  await Promise.all([initDb(), initSaasDb()]);
+  console.log("Databases initialized.");
+
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
       server: { middlewareMode: true },

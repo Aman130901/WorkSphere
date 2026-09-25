@@ -202,37 +202,34 @@ const DEFAULT_SETTINGS: SystemSettings = {
   backups: [],
 };
 
-function readDb(): DatabaseSchema {
-  try {
-    if (!fs.existsSync(DB_PATH)) {
-      const initial = generateInitialData();
-      fs.writeFileSync(DB_PATH, JSON.stringify(initial, null, 2), "utf8");
-      return initial;
-    }
-    const data = fs.readFileSync(DB_PATH, "utf8");
-    const parsed = JSON.parse(data);
-    // Ensure all settings fields are present
-    if (parsed.settings) {
-      parsed.settings = { ...DEFAULT_SETTINGS, ...parsed.settings };
-    } else {
-      parsed.settings = DEFAULT_SETTINGS;
-    }
-    if (!parsed.maintenanceTickets) {
-      parsed.maintenanceTickets = [];
-    }
-    return parsed;
-  } catch (err) {
-    console.error("Error reading database:", err);
-    return generateInitialData();
+import { loadState, saveState } from "./mongo";
+
+let dbState: DatabaseSchema | null = null;
+export let isDbDirty = false;
+
+export async function initDb() {
+  dbState = await loadState('main_db', generateInitialData());
+}
+
+export async function flushDb() {
+  if (isDbDirty && dbState) {
+    await saveState('main_db', dbState);
+    isDbDirty = false;
   }
 }
 
-function writeDb(data: DatabaseSchema) {
-  try {
-    fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2), "utf8");
-  } catch (err) {
-    console.error("Error writing database:", err);
+function readDb(): DatabaseSchema {
+  if (!dbState) {
+    const initial = generateInitialData();
+    dbState = initial;
+    return initial;
   }
+  return dbState;
+}
+
+function writeDb(data: DatabaseSchema) {
+  dbState = data;
+  isDbDirty = true;
 }
 
 function generateInitialData(): DatabaseSchema {
